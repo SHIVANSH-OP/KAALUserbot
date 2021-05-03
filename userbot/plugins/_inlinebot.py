@@ -28,10 +28,10 @@ from userbot.cmdhelp import *
 from W2HBOT.utils import *
 from userbot.Config import Config
 
-W2H_row = Config.BUTTONS_IN_HELP
-W2H_emoji = Config.EMOJI_IN_HELP
+kaal_row = Config.BUTTONS_IN_HELP
+kaal_emoji = Config.EMOJI_IN_HELP
 # thats how a lazy guy imports
-# W2HBOT
+# kaalBOT
 
 def button(page, modules):
     Row = W2H_row
@@ -58,15 +58,15 @@ def button(page, modules):
                f"⬅️ 𝐁𝐀𝐂𝐊 {W2H_emoji}", data=f"page({(max_pages - 1) if page == 0 else (page - 1)})"
             ),
             custom.Button.inline(
-               f"•{W2H_emoji} ❌ {W2H_emoji}•", data="close"
+               f"•{kaal_emoji} ❌ {kaal_emoji}•", data="close"
             ),
             custom.Button.inline(
-               f"{W2H_emoji} 𝐍𝐄𝐗𝐓 ➡️", data=f"page({0 if page == (max_pages - 1) else page + 1})"
+               f"{kaal_emoji} 𝐍𝐄𝐗𝐓 ➡️", data=f"page({0 if page == (max_pages - 1) else page + 1})"
             ),
         ]
     )
     return [max_pages, buttons]
-    # Changing this line may give error in bot as i added some special cmds in W2HBOT channel to get this module work...
+    # Changing this line may give error in bot as i added some special cmds in kaalBOT channel to get this module work...
 
     modules = CMD_HELP
 if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
@@ -75,7 +75,7 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
         builder = event.builder
         result = None
         query = event.text
-        if event.query.user_id == bot.uid and query == "@W2H_Userbot":
+        if event.query.user_id == bot.uid and query == "@kaalsupport":
             rev_text = query[::-1]
             veriler = button(0, sorted(CMD_HELP))
             result = await builder.article(
@@ -94,18 +94,18 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
             )
         else:
             result = builder.article(
-                "@W2H_Userbot",
-                text="""**Hey! This is [W2HBOT.](https://t.me/W2H_Userbot) \nYou can know more about me from the links given below 👇**""",
+                "@kaalsupport",
+                text="""**Hey! This is [kaalBOT.](https://t.me/kaalsupport) \nYou can know more about me from the links given below 👇**""",
                 buttons=[
                     [
-                        custom.Button.url("🔥 CHANNEL 🔥", "https://t.me/W2H_Userbot"),
+                        custom.Button.url("🔥 CHANNEL 🔥", "https://t.me/kaalsupport"),
                         custom.Button.url(
-                            "⚡ GROUP ⚡", "https://t.me/W2HSupport"
+                            "⚡ GROUP ⚡", "https://t.me/kaalsupport"
                         ),
                     ],
                     [
                         custom.Button.url(
-                            "✨ REPO ✨", "https://github.com/W2HGalaxy-OP/W2HBOT"),
+                            "✨ REPO ✨", "https://github.com/kaal0408/kaalBOT"),
                     ],
                 ],
                 link_preview=False,
@@ -116,14 +116,14 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
     async def page(event):
         if not event.query.user_id == bot.uid:
             return await event.answer(
-                "Mil Gyi Tasalli..? Kabse mere bot me ungli kr rhe h. Khudka bna lo na agr chaiye to pta nhi kaha se aajate h disturb krne. ©W2HBOT™ ",
+                "Mil Gyi Tasalli..? Kabse mere bot me ungli kr rhe h. Khudka bna lo na agr chaiye to pta nhi kaha se aajate h disturb krne. ©kaalBOT™ ",
                 cache_time=0,
                 alert=True,
             )
         page = int(event.data_match.group(1).decode("UTF-8"))
         veriler = button(page, CMD_HELP)
         await event.edit(
-            f"**Legenday AF** [W2HBOT](https://t.me/W2H_Userbot) __Working...__\n\n**Number of modules installed :** `{len(CMD_HELP)}`\n**page:** {page + 1}/{veriler[0]}",
+            f"**Legenday AF** [kaalBOT](https://t.me/kaalsupport) __Working...__\n\n**Number of modules installed :** `{len(CMD_HELP)}`\n**page:** {page + 1}/{veriler[0]}",
             buttons=veriler[1],
             link_preview=False,
         )
@@ -132,10 +132,10 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
     async def on_plug_in_callback_query_handler(event):
         if event.query.user_id == bot.uid:
             await delete_W2H(event,
-              "⚜️W2HBOT Menu Provider Is now Closed⚜️\n\n         **[©W2HBOT](t.me/W2H_Userbot)**", 5, link_preview=False
+              "⚜️kaalBOT Menu Provider Is now Closed⚜️\n\n         **[©kaalBOT](t.me/kaalsupport)**", 5, link_preview=False
             )
         else:
-            W2H_alert = "Mil Gyi Tasalli..? Kabse mere bot me ungli kr rhe h. Khudka bna lo na agr chaiye to pta nhi kaha se aajate h disturb krne. ©W2HBOT"
+            kaal_alert = "Mil Gyi Tasalli..? Kabse mere bot me ungli kr rhe h. Khudka bna lo na agr chaiye to pta nhi kaha se aajate h disturb krne. ©kaalBOT"
             await event.answer(W2H_alert, cache_time=0, alert=True)
           
     @tgbot.on(
@@ -177,7 +177,7 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
     async def commands(event):
         if not event.query.user_id == bot.uid:
             return await event.answer(
-                "Mil Gyi Tasalli..? Kabse mere bot me ungli kr rhe h. Khudka bna lo na agr chaiye to pta nhi kaha se aajate h disturb krne. ©W2HBOT ",
+                "Mil Gyi Tasalli..? Kabse mere bot me ungli kr rhe h. Khudka bna lo na agr chaiye to pta nhi kaha se aajate h disturb krne. ©kaalBOT ",
                 cache_time=0,
                 alert=True,
             )
