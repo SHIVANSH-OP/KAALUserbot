@@ -31,7 +31,7 @@ from telethon.tl.types import (
 
 from userbot import *
 from userbot.plugins.sql_helper.mute_sql import is_muted, mute, unmute
-from W2HBOT.utils import *
+from kaalBOT.utils import *
 from userbot.cmdhelp import CmdHelp
 
 # =================== CONSTANT ===================
@@ -139,7 +139,7 @@ async def promote(promt):
         delete_messages=True,
         pin_messages=True,
     )
-    W2Hevent = await edit_or_reply(promt, "Promoting...")
+    kaalevent = await edit_or_reply(promt, "Promoting...")
     user, rank = await get_user_from_event(promt)
     if not rank:
         rank = "Bisi"
@@ -147,9 +147,9 @@ async def promote(promt):
         return
     try:
         await promt.client(EditAdminRequest(promt.chat_id, user.id, new_rights, rank))
-        await W2Hevent.edit("Promoted Successfully! Mje le bhnchoo...power ke 😂")
+        await kaalevent.edit("Promoted Successfully! Mje le bhnchoo...power ke 😂")
     except BadRequestError:
-        await W2Hevent.edit(NO_PERM)
+        await kaalevent.edit(NO_PERM)
         return
     if BOTLOG:
         await promt.client.send_message(
@@ -172,7 +172,7 @@ async def demote(dmod):
     if not admin and not creator:
         await edit_or_reply(dmod, NO_ADMIN)
         return
-    W2Hevent = await edit_or_reply(dmod, "Demoting...")
+    kaalevent = await edit_or_reply(dmod, "Demoting...")
     rank = "??????"
     user = await get_user_from_event(dmod)
     user = user[0]
@@ -189,7 +189,7 @@ async def demote(dmod):
     try:
         await dmod.client(EditAdminRequest(dmod.chat_id, user.id, newrights, rank))
     except BadRequestError:
-        await W2Hevent.edit(NO_PERM)
+        await kaalevent.edit(NO_PERM)
         return
     await W2Hevent.edit("Demoted Successfully!Bhut ud rhe the admin bn kr aa gyy zameen pe 😏")
     if BOTLOG:
@@ -216,7 +216,7 @@ async def ban(bon):
     user, reason = await get_user_from_event(bon)
     if not user:
         return
-    W2Hevent = await edit_or_reply(bon, "Banning this retard")
+    kaalevent = await edit_or_reply(bon, "Banning this retard")
     try:
         await bon.client(EditBannedRequest(bon.chat_id, user.id, BANNED_RIGHTS))
     except BadRequestError:
@@ -227,12 +227,12 @@ async def ban(bon):
         if reply:
             await reply.delete()
     except BadRequestError:
-        await W2Hevent.edit("I ain't got msg deleting right. But still Banned!")
+        await kaalevent.edit("I ain't got msg deleting right. But still Banned!")
         return
     if reason:
-        await W2Hevent.edit(f"{str(user.id)} is banned !!\nReason: {reason}")
+        await kaalevent.edit(f"{str(user.id)} is banned !!\nReason: {reason}")
     else:
-        await W2Hevent.edit(f"{str(user.id)} is banned!")
+        await kaalevent.edit(f"{str(user.id)} is banned!")
     if BOTLOG:
         await bon.client.send_message(
             BOTLOG_CHATID,
@@ -254,14 +254,14 @@ async def nothanos(unbon):
     if not admin and not creator:
         await edit_or_reply(unbon, NO_ADMIN)
         return
-    W2Hevent = await edit_or_reply(unbon, "Unbanning...")
+    kaalevent = await edit_or_reply(unbon, "Unbanning...")
     user = await get_user_from_event(unbon)
     user = user[0]
     if not user:
         return
     try:
         await unbon.client(EditBannedRequest(unbon.chat_id, user.id, UNBAN_RIGHTS))
-        await W2Hevent.edit("Unbanned Successfully! Giving one more chance 😏")
+        await kaalevent.edit("Unbanned Successfully! Giving one more chance 😏")
         if BOTLOG:
             await unbon.client.send_message(
                 BOTLOG_CHATID,
@@ -270,7 +270,7 @@ async def nothanos(unbon):
                 f"CHAT: {unbon.chat.title}(`{unbon.chat_id}`)",
             )
     except UserIdInvalidError:
-        await W2Hevent.edit("Sorry I Can't Unban This Retard!")
+        await kaalevent.edit("Sorry I Can't Unban This Retard!")
 
 
 @command(incoming=True)
@@ -341,19 +341,19 @@ async def kick(usr):
     if not user:
         await edit_or_reply(usr, "Couldn't fetch user.")
         return
-    W2Hevent = await edit_or_reply(usr, "Kicking...")
+    kaalevent = await edit_or_reply(usr, "Kicking...")
     try:
         await usr.client.kick_participant(usr.chat_id, user.id)
         await sleep(0.5)
     except Exception as e:
-        await W2Hevent.edit(NO_PERM + f"\n{str(e)}")
+        await kaalevent.edit(NO_PERM + f"\n{str(e)}")
         return
     if reason:
-        await W2Hevent.edit(
+        await kaalevent.edit(
             f"Kicked [{user.first_name}](tg://user?id={user.id})!\nReason: {reason}"
         )
     else:
-        await W2Hevent.edit(f"Kicked [{user.first_name}](tg://user?id={user.id})!")
+        await kaalevent.edit(f"Kicked [{user.first_name}](tg://user?id={user.id})!")
     if BOTLOG:
         await usr.client.send_message(
             BOTLOG_CHATID,
