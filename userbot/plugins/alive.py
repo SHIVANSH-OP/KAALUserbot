@@ -1,5 +1,5 @@
 from userbot import *
-from W2HBOT.utils import *
+from kaalBOT.utils import *
 from userbot.cmdhelp import CmdHelp
 from telethon import events, version
 from telethon.events import NewMessage
@@ -8,7 +8,7 @@ from telethon.tl.types import Channel, Chat, User
 
 #-------------------------------------------------------------------------------
 
-DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "W2H User"
+DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "kaal User"
 
 ludosudo = Config.SUDO_USERS
 
@@ -22,19 +22,19 @@ aura = bot.uid
 mention = f"[{DEFAULTUSER}](tg://user?id={aura})"
 
 
-PM_IMG = "https://telegra.ph/file/d88acbd81510ccf8f4428.mp4"
-pm_caption ="**W2HBOT Is Online**\n\n"
+PM_IMG = "https://telegra.ph/file/6b0c9443fdf08ca9eb07b.mp4"
+pm_caption ="**kaalBOT Is Online**\n\n"
 
 pm_caption += f"**┏━━━━━━━━━━━━━┓**\n"
 pm_caption += f"**┣★ Master : {mention}**\n"
 pm_caption += f"**┣★ Telethon : `{version.__version__}`**\n"
-pm_caption += f"**┣★ W2HBOT : {W2Hversion}**\n"
+pm_caption += f"**┣★ kaalBOT : {kaalversion}**\n"
 pm_caption += f"**┣★ Sudo       : `{sudou}`**\n"
-pm_caption += f"**┣★ Channel   : [Join Here](https://t.me/W2H_Userbot)**\n"
-pm_caption += f"**┣★ Creater    : [W2H Here](https://t.me/David99q)**\n"
+pm_caption += f"**┣★ Channel   : [Join Here](https://t.me/KAALUserbot)**\n"
+pm_caption += f"**┣★ Creater    : [kaal Here](https://t.me/Murat_30_kaal)**\n"
 pm_caption += f"**┗━━━━━━━━━━━━━┛**\n"
 
-pm_caption += "    [✨REPO✨](https://github.com/W2HGalaxy-OP/W2HBOT) 🔹 [📜License📜](https://github.com/W2HGalaxy-OP/W2HBOT/blob/master/LICENSE)"
+pm_caption += "    [✨REPO✨](https://github.com/kaal0408/KaalBOT) 🔹 [📜License📜](https://github.com/kaal0408/kaalBOT/blob/master/LICENSE)"
 
 
 @bot.on(admin_cmd(outgoing=True, pattern="alive$"))
