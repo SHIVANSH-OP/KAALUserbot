@@ -52,10 +52,10 @@ for name in files:
 
 import userbot._core
 
-print(f"""W2HBOT IS ON!!! W2HBOT VERSION :- {W2Hversion}
+print(f"""kaalBOT IS ON!!! kaalBOT VERSION :- {kaalversion}
 JOIN OFFICIAL CHAT GROUP AND UPDATES CHANNEL
-OFFICIAL GROUP :- @W2HSupport
-OFFICIAL CHANNEL :- @W2H_Userbot
+OFFICIAL GROUP :- @kaalsupport01
+OFFICIAL CHANNEL :- @kaalsupport
 DO .alive OR .ping CHECK IF I'M ON!
 IF YOU FACE ANY ISSUE THEN ASK AT CHAT GROUP.""")
 
