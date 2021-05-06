@@ -1,6 +1,6 @@
 import asyncio
 
-from W2HBOT.utils import admin_cmd, sudo_cmd, edit_or_reply
+from kaalBOT.utils import admin_cmd, sudo_cmd, edit_or_reply
 from userbot.cmdhelp import CmdHelp
 
 
@@ -125,7 +125,7 @@ async def ammastar(W2Hstar):
       
         await asyncio.sleep(animation_interval)
         
-        await W2Hstar.edit(animation_chars[i % 11])
+        await kaalstar.edit(animation_chars[i % 11])
     
         
 @bot.on(admin_cmd(pattern=r"lmoon", outgoing=True))
