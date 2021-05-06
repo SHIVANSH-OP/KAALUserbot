@@ -5,25 +5,25 @@ from pathlib import Path
 from telethon import events
 from telethon import functions, types
 from telethon.tl.types import InputMessagesFilterDocument
-from W2HBOT.utils import *
+from kaalBOT.utils import *
 from userbot import *
-from userbot import bot as W2HBOT
+from userbot import bot as kaalBOT
 
 DELETE_TIMEOUT = 5
-DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "W2H User"
-W2H_logo = "./W2H/W2HBOT_logo.jpg"
-aura = W2HBOT.uid
+DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "kaal User"
+kaal_logo = "./kaal/kaalBOT_logo.jpg"
+aura = kaalBOT.uid
 W2H = f"[{DEFAULTUSER}](tg://user?id={aura})"
 
-@W2HBOT.on(admin_cmd(pattern=r"send (?P<shortname>\w+)", outgoing=True))
-@W2HBOT.on(sudo_cmd(pattern=r"send (?P<shortname>\w+)", allow_sudo=True))
+@kaalBOT.on(admin_cmd(pattern=r"send (?P<shortname>\w+)", outgoing=True))
+@kaalBOT.on(sudo_cmd(pattern=r"send (?P<shortname>\w+)", allow_sudo=True))
 async def send(event):
     if event.fwd_from:
         return
     message_id = event.message.id
     thumb = W2H_logo
     input_str = event.pattern_match.group(1)
-    omk = f"**⍟ Plugin name ≈** `{input_str}`\n**⍟ Uploaded by ≈** {W2H}\n\n⚡ **[Legendary W2HBOT](t.me/W2H_Userbot)** ⚡"
+    omk = f"**⍟ Plugin name ≈** `{input_str}`\n**⍟ Uploaded by ≈** {kaal}\n\n⚡ **[Legendary kaalBOT](t.me/kaalsupport01)** ⚡"
     the_plugin_file = "./userbot/plugins/{}.py".format(input_str)
     if os.path.exists(the_plugin_file):
         lauda = await event.client.send_file(
@@ -39,8 +39,8 @@ async def send(event):
     else:
         await edit_or_reply(event, "File not found..... Kek")
 
-@W2HBOT.on(admin_cmd(pattern="install$", outgoing=True))
-@W2HBOT.on(sudo_cmd(pattern="install$", allow_sudo=True))
+@kaalBOT.on(admin_cmd(pattern="install$", outgoing=True))
+@kaalBOT.on(sudo_cmd(pattern="install$", allow_sudo=True))
 async def install(event):
     if event.fwd_from:
         return
@@ -71,7 +71,7 @@ async def install(event):
                             a = "__Installing...__"
                             b = 1
                         await event.edit(a)
-                    return await event.edit(f"✅ **Installed module** :- `{shortname}` \n✨ BY :- {W2H}\n\n{string}\n\n        ⚡ **[Legendary W2HBOT](t.me/W2H_Userbot)** ⚡", link_preview=False)
+                    return await event.edit(f"✅ **Installed module** :- `{shortname}` \n✨ BY :- {kaal}\n\n{string}\n\n        ⚡ **[Legendary W2HBOT](t.me/W2H_Userbot)** ⚡", link_preview=False)
                 return await event.edit(f"Installed module `{os.path.basename(downloaded_file_name)}`")
             else:
                 os.remove(downloaded_file_name)
@@ -80,8 +80,8 @@ async def install(event):
             await event.edit(f"**Failed to Install** \n`Error`\n{str(e)}")
             return os.remove(downloaded_file_name)
     
-@W2HBOT.on(admin_cmd(pattern=r"uninstall (?P<shortname>\w+)", outgoing=True))
-@W2HBOT.on(sudo_cmd(pattern=r"uninstall (?P<shortname>\w+)", allow_sudo=True))
+@kaalBOT.on(admin_cmd(pattern=r"uninstall (?P<shortname>\w+)", outgoing=True))
+@kaalBOT.on(sudo_cmd(pattern=r"uninstall (?P<shortname>\w+)", allow_sudo=True))
 async def uninstall(aura):
     if aura.fwd_from:
         return
@@ -94,8 +94,8 @@ async def uninstall(aura):
     except OSError as e:
         await aura.edit("Error: %s : %s" % (dir_path, e.strerror))
 
-@W2HBOT.on(admin_cmd(pattern=r"unload (?P<shortname>\w+)$"))
-@W2HBOT.on(sudo_cmd(pattern=r"upload (?P<shortname>\w+)$", allow_sudo=True))
+@kaalBOT.on(admin_cmd(pattern=r"unload (?P<shortname>\w+)$"))
+@kaalBOT.on(sudo_cmd(pattern=r"upload (?P<shortname>\w+)$", allow_sudo=True))
 async def unload(event):
     if event.fwd_from:
         return
@@ -111,8 +111,8 @@ async def unload(event):
         )
 
 
-@W2HBOT.on(admin_cmd(pattern=r"load (?P<shortname>\w+)$"))
-@W2HBOT.on(sudo_cmd(pattern=r"load (?P<shortname>\w+)$", allow_sudo=True))
+@kaalBOT.on(admin_cmd(pattern=r"load (?P<shortname>\w+)$"))
+@kaalBOT.on(sudo_cmd(pattern=r"load (?P<shortname>\w+)$", allow_sudo=True))
 async def load(event):
     if event.fwd_from:
         return
