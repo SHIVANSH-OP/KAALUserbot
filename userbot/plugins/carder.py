@@ -6,35 +6,35 @@ from telethon.tl.functions.messages import DeleteHistoryRequest
 from telethon.errors.rpcerrorlist import YouBlockedUserError
 from telethon.tl.functions.account import UpdateNotifySettingsRequest
 
-from W2HBOT.utils import admin_cmd, sudo_cmd, edit_or_reply
-from W2HBOT import CmdHelp, bot as W2HBOT
+from kaalBOT.utils import admin_cmd, sudo_cmd, edit_or_reply
+from kaalBOT import CmdHelp, bot as W2HBOT
 
 
-@W2HBOT.on(admin_cmd("gencc$"))
-@W2HBOT.on(sudo_cmd("gencc$", allow_sudo=True))
+@kaalBOT.on(admin_cmd("gencc$"))
+@kaalBOT.on(sudo_cmd("gencc$", allow_sudo=True))
 async def _(W2Hevent):
     if W2Hevent.fwd_from:
         return
-    W2Hcc = Faker()
-    W2Hname = W2Hcc.name()
-    W2Hadre = W2Hcc.address()
-    W2Hcard = W2Hcc.credit_card_full()
+    kaalcc = Faker()
+    kaalname = kaalcc.name()
+    kaaladre = kaalcc.address()
+    kaalcard = kaalcc.credit_card_full()
     
-    await edit_or_reply(W2Hevent, f"__**👤 NAME :- **__\n`{W2Hname}`\n\n__**🏡 ADDRESS :- **__\n`{W2Hadre}`\n\n__**💸 CARD :- **__\n`{W2Hcard}`")
+    await edit_or_reply(kaalevent, f"__**👤 NAME :- **__\n`{kaalname}`\n\n__**🏡 ADDRESS :- **__\n`{kaaladre}`\n\n__**💸 CARD :- **__\n`{kaalcard}`")
     
 
-@W2HBOT.on(admin_cmd(pattern="bin ?(.*)"))
-@W2HBOT.on(sudo_cmd(pattern="bin ?(.*)", allow_sudo=True))
+@kaalBOT.on(admin_cmd(pattern="bin ?(.*)"))
+@kaalBOT.on(sudo_cmd(pattern="bin ?(.*)", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
         return 
-    W2H_input = event.pattern_match.group(1)
+    kaal_input = event.pattern_match.group(1)
     chat = "@carol5_bot"
     await event.edit("Checking...")
     async with event.client.conversation(chat) as conv:
           try:     
               response = conv.wait_event(events.NewMessage(incoming=True,from_users=1247032902))
-              await event.client.send_message(chat, f"/bin {W2H_input}")
+              await event.client.send_message(chat, f"/bin {kaal_input}")
               response = await response 
           except YouBlockedUserError: 
               await event.reply("Please Unblock @carol5_bot")
@@ -44,18 +44,18 @@ async def _(event):
              await event.client.send_message(event.chat_id, response.message)
 
 
-@W2HBOT.on(admin_cmd(pattern="vbv ?(.*)"))
-@W2HBOT.on(sudo_cmd(pattern="vbv ?(.*)", allow_sudo=True))
+@kaalBOT.on(admin_cmd(pattern="vbv ?(.*)"))
+@kaalBOT.on(sudo_cmd(pattern="vbv ?(.*)", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
         return 
-    W2H_input = event.pattern_match.group(1)
+    kaal_input = event.pattern_match.group(1)
     chat = "@carol5_bot"
     await event.edit("Checking...")
     async with event.client.conversation(chat) as conv:
           try:     
               response = conv.wait_event(events.NewMessage(incoming=True,from_users=1247032902))
-              await event.client.send_message(chat, f"/vbv {W2H_input}")
+              await event.client.send_message(chat, f"/vbv {kaal_input}")
               response = await response 
           except YouBlockedUserError: 
               await event.reply("Please Unblock @carol5_bot")
@@ -65,12 +65,12 @@ async def _(event):
              await event.client.send_message(event.chat_id, response.message)
     
     
-@W2HBOT.on(admin_cmd(pattern="key ?(.*)"))
-@W2HBOT.on(sudo_cmd(pattern="key ?(.*)", allow_sudo=True))
+@kaalBOT.on(admin_cmd(pattern="key ?(.*)"))
+@kaalBOT.on(sudo_cmd(pattern="key ?(.*)", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
         return 
-    W2H_input = event.pattern_match.group(1)
+    kaal_input = event.pattern_match.group(1)
     chat = "@carol5_bot"
     await event.edit("Checking...")
     async with event.client.conversation(chat) as conv:
@@ -86,18 +86,18 @@ async def _(event):
              await event.client.send_message(event.chat_id, response.message)
  
   
-@W2HBOT.on(admin_cmd(pattern="iban ?(.*)"))
-@W2HBOT.on(sudo_cmd(pattern="iban ?(.*)", allow_sudo=True))
+@kaalBOT.on(admin_cmd(pattern="iban ?(.*)"))
+@kaalBOT.on(sudo_cmd(pattern="iban ?(.*)", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
         return 
-    W2H_input = event.pattern_match.group(1)
+    kaal_input = event.pattern_match.group(1)
     chat = "@carol5_bot"
     await event.edit("Checking...")
     async with event.client.conversation(chat) as conv:
           try:     
               response = conv.wait_event(events.NewMessage(incoming=True,from_users=1247032902))
-              await event.client.send_message(chat, f"/iban {W2H_input}")
+              await event.client.send_message(chat, f"/iban {kaal_input}")
               response = await response 
           except YouBlockedUserError: 
               await event.reply("Please Unblock @carol5_bot")
@@ -107,18 +107,18 @@ async def _(event):
              await event.client.send_message(event.chat_id, response.message)
 
     
-@W2HBOT.on(admin_cmd(pattern="ccheck ?(.*)"))
-@W2HBOT.on(sudo_cmd(pattern="ccheck ?(.*)", allow_sudo=True))
+@kaalBOT.on(admin_cmd(pattern="ccheck ?(.*)"))
+@kaalBOT.on(sudo_cmd(pattern="ccheck ?(.*)", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
         return 
-    W2H_input = event.pattern_match.group(1)
+    kaal_input = event.pattern_match.group(1)
     chat = "@carol5_bot"
     await event.edit("Checking...")
     async with event.client.conversation(chat) as conv:
           try:     
               response = conv.wait_event(events.NewMessage(incoming=True,from_users=1247032902))
-              await event.client.send_message(chat, f"/ss {W2H_input}")
+              await event.client.send_message(chat, f"/ss {kaal_input}")
               response = await response 
           except YouBlockedUserError: 
               await event.reply("Please Unblock @carol5_bot")
@@ -128,18 +128,18 @@ async def _(event):
              await event.client.send_message(event.chat_id, response.message)
              
              
-@W2HBOT.on(admin_cmd(pattern="ccbin ?(.*)"))
-@W2HBOT.on(sudo_cmd(pattern="ccbin ?(.*)", allow_sudo=True))
+@kaalBOT.on(admin_cmd(pattern="ccbin ?(.*)"))
+@kaalBOT.on(sudo_cmd(pattern="ccbin ?(.*)", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
         return 
-    W2H_input = event.pattern_match.group(1)
+    kaal_input = event.pattern_match.group(1)
     chat = "@carol5_bot"
-    await event.edit(f"Trying to generate CC from the given bin `{W2H_input}`")
+    await event.edit(f"Trying to generate CC from the given bin `{kaal_input}`")
     async with event.client.conversation(chat) as conv:
           try:     
               response = conv.wait_event(events.NewMessage(incoming=True,from_users=1247032902))
-              await event.client.send_message(chat, f"/gen {W2H_input}")
+              await event.client.send_message(chat, f"/gen {kaal_input}")
               response = await response 
           except YouBlockedUserError: 
               await event.reply("Please Unblock @carol5_bot")
