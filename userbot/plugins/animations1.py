@@ -4,7 +4,7 @@ from collections import deque
 from telethon.tl.functions.users import GetFullUserRequest
 
 from userbot import *
-from W2HBOT.utils import admin_cmd, edit_or_reply, sudo_cmd
+from kaalBOT.utils import admin_cmd, edit_or_reply, sudo_cmd
 from userbot.cmdhelp import CmdHelp
 
 DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "W2H User"
@@ -125,7 +125,7 @@ async def _(event):
     await event.edit("▪️▪️▪️▪️ \n▪️▪️▪️▪️ \n▪️▪️▪️▪️ \n▪️▪️▪️▪️ \n😵😵😵😵 \n")
     await asyncio.sleep(0.5)
     await event.edit(
-        "[Marr gya madarchod \nLaaa laaa......\nLa la la la](https://telegra.ph/file/19c7b9d1b7a7454ab2918.mp4)",
+        "[Marr gya madarchod \nLaaa laaa......\nLa la la la](https://telegra.ph/file/6b0c9443fdf08ca9eb07b.mp4)",
         link_preview=True,
     )
     await asyncio.sleep(2)
@@ -176,7 +176,7 @@ async def _(event):
         idd = reply_message.sender_id
         if idd == 1100735944:
             await event.edit(
-                "This is My Master\n**How dare you trying to tell me to kill master nigger!**\n\n__Your account is on hold! Pay 99$ to my master__ [David99q](https://t.me/David99q) __to release your account__😏"
+                "This is My Master\n**How dare you trying to tell me to kill master nigger!**\n\n__Your account is on hold! Pay 99$ to my master__ [David99q](https://t.me/Murat_30_kaal) __to release your account__😏"
             )
         else:
             await event.edit("`K i l l i n g . . . . . . .`")
