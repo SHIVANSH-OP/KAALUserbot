@@ -1,4 +1,4 @@
-# Made By @David99q Keep Credits If You Are Goanna Kang This Lol
+# Made By @Murat_30_kaal Keep Credits If You Are Goanna Kang This Lol
 
 # And Thanks To The Creator Of Autopic This Script Was Made from Snippets From That Script
 
@@ -19,7 +19,7 @@ import requests
 from telethon.tl import functions
 
 from userbot import CMD_HELP
-from W2HBOT.utils import admin_cmd
+from kaalBOT.utils import admin_cmd
 from userbot.cmdhelp import CmdHelp
 
 COLLECTION_STRING1 = [
