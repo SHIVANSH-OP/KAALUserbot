@@ -79,14 +79,14 @@
 
 ```
 Get help regarding setting up 
-your W2HBOT in our official 
+your kaalBOT in our official 
 support Group and get updates
 notifications in Update Channel.
 ```
 
-<a href="https://t.me/W2H_Userbot"><img src="https://img.shields.io/badge/Join-Support%20Channel-red.svg?style=for-the-badge&logo=Telegram"></a>
+<a href="https://t.me/kaalsupport"><img src="https://img.shields.io/badge/Join-Support%20Channel-red.svg?style=for-the-badge&logo=Telegram"></a>
 
-<a href="https://t.me/W2HSupport"><img src="https://img.shields.io/badge/Join-Support%20Group-red.svg?style=for-the-badge&logo=Telegram"></a>
+<a href="https://t.me/kaalsupport01"><img src="https://img.shields.io/badge/Join-Support%20Group-red.svg?style=for-the-badge&logo=Telegram"></a>
 
 [![Contact Me](https://img.shields.io/badge/Telegram-Contact%20Me-informational)](https://t.me/David99q)
 
@@ -97,9 +97,9 @@ notifications in Update Channel.
 
 ![](https://www.gnu.org/graphics/gplv3-or-later.png)
 
-Copyright (C) 2021 W2HGalaxy-OP
+Copyright (C) 2021 kaal-OP
 
-Poject [W2HBOT](https://github.com/W2HGalaxy-OP/W2HBOT) is free software: you can redistribute it and/or modify
+Poject [kaalBOT](https://github.com/kaal-OP/kaalBOT) is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
 the Free Software Foundation, either version 3 of the License, or
 (at your option) any later version.
@@ -117,7 +117,7 @@ along with this program. If not, see <https://www.gnu.org/licenses/>.
 <details>
   <summary> <h4>• Credits 🏅 •</h4> </summary>
 
-• [Galaxy-OP](https://github.com/W2HGalaxy-OP):DEV
+• [Galaxy-OP](https://github.com/kaal-OP):DEV
 
 • [Itzgauravv](https://github.com/itzgauravv):DEV
 
