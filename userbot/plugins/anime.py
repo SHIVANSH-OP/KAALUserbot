@@ -1,16 +1,16 @@
 import re
 
-from W2HBOT import bot
-from W2HBOT.utils import admin_cmd, sudo_cmd, edit_or_reply
-from W2HBOT.cmdhelp import CmdHelp
-from W2HBOT.helpers.functions import deEmojify
+from kaalBOT import bot
+from kaalBOT.utils import admin_cmd, sudo_cmd, edit_or_reply
+from kaalBOT.cmdhelp import CmdHelp
+from kaalBOT.helpers.functions import deEmojify
 
 
 @bot.on(admin_cmd(pattern="anime(?: |$)(.*)"))
 @bot.on(sudo_cmd(pattern="anime(?: |$)(.*)", allow_sudo=True))
 async def nope(aura):
-    W2H = aura.pattern_match.group(1)
-    if not W2H:
+    kaal = aura.pattern_match.group(1)
+    if not kaal:
         if aura.is_reply:
             (await aura.get_reply_message()).message
         else:
