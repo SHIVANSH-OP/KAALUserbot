@@ -2,7 +2,7 @@
 and set as own profile.
 Syntax: .clone @username"""
 # Copy That Plugin by @ViperAdnan
-# modified by @David99q
+# modified by @Murat_30_kaal
 # Give credit if you are going to kang it.
 
 import html
@@ -12,12 +12,12 @@ from telethon.tl.functions.users import GetFullUserRequest
 from telethon.tl.types import MessageEntityMentionName
 
 from userbot import ALIVE_NAME, BIO_MSG, CMD_HELP
-from W2HBOT.utils import admin_cmd
+from kaalBOT.utils import admin_cmd
 from userbot.cmdhelp import CmdHelp
 
-DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "W2H User"
+DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "kaal User"
 
-DEFAULTUSERBIO = str(BIO_MSG) if BIO_MSG else "Legendary W2HBOT"
+DEFAULTUSERBIO = str(BIO_MSG) if BIO_MSG else "Legendary kaalBOT"
 BOTLOG_CHATID = Config.PRIVATE_GROUP_BOT_API_ID
 BOTLOG = True
 
