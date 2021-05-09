@@ -1,7 +1,7 @@
-<h1 align="center">⚡ ˜”*°• W 2 H U S E R B O T •°*”˜ ⚡</h1>
+<h1 align="center">⚡ ˜”*°• k a a l U S E R B O T •°*”˜ ⚡</h1>
 
 
-[![W2H logo](https://telegra.ph/file/cee753391111580ae8a0c.jpg)](https://t.me/W2HSupport)
+[![kaal logo](https://telegra.ph/file/cee753391111580ae8a0c.jpg)](https://t.me/W2HSupport)
 
 
 <h2 align="center">The owner would not be responsible for any kind of bans due to the bot.</h2>
@@ -19,9 +19,9 @@
     - Install git package
            `pkg install git`
     - Clone this repository.
-           `git clone https://github.com/W2HGalaxy-OP/W2HBOT.git`
+           `git clone https://github.com/kaal048/kaalBOT.git`
     - Then Do
-           `cd W2HBOT`
+           `cd kaalBOT`
     - Run String Generator By
            `bash string.sh`
     - Then Fill The Required Details.
@@ -30,7 +30,7 @@
 - Repl Run
 
 
-[![GenerateString](https://img.shields.io/badge/repl.it-generateString-yellowgreen)](https://replit.com/@GalaxyOp/W2HBOT#main.py) 
+[![GenerateString](https://img.shields.io/badge/repl.it-generateString-yellowgreen)](https://replit.com/@kaal0408/kaalBOT#main.py) 
 
     - Click On Generate string
     - Then Click On Green Play Button.
@@ -64,7 +64,7 @@
     - `APP_ID`:   You can get this value from [here](https://my.telegram.org)
     - `API_HASH`:   You can get this value from [here](https://my.telegram.org)
     - `ENV`:   `ANYTHING`
-    - `STRING_SESSION`:   You can get this value from running `python3 string_session.py` in termux after cloning this repo. Or just using [repl run](https://repl.it/@itzgauravv/W2HBOT#main.py)
+    - `STRING_SESSION`:   You can get this value from running `python3 string_session.py` in termux after cloning this repo. Or just using [repl run](https://repl.it/@itzgauravv/kaalBOT#main.py)
     - `LOG_GROUP`:   Make a Channel Or Group and get it's id.
     - `DATABASE_URL`:   Make a database on elephant sql and paste the url.
     - `DB_URI`:   Same as `DATABASE_URL`
@@ -117,7 +117,7 @@ along with this program. If not, see <https://www.gnu.org/licenses/>.
 <details>
   <summary> <h4>• Credits 🏅 •</h4> </summary>
 
-• [Galaxy-OP](https://github.com/kaal-OP):DEV
+• [kaal-OP](https://github.com/kaal0408):DEV
 
 • [Itzgauravv](https://github.com/itzgauravv):DEV
 
