@@ -1,6 +1,6 @@
 import nekos
 
-from W2HBOT.utils import admin_cmd, edit_or_reply, sudo_cmd
+from kaalBOT.utils import admin_cmd, edit_or_reply, sudo_cmd
 from userbot import CMD_HELP
 from userbot.cmdhelp import CmdHelp
 
@@ -36,28 +36,28 @@ async def payf(event):
 @bot.on(admin_cmd(pattern="cat$"))
 @bot.on(sudo_cmd(pattern="cat$", allow_sudo=True))
 async def hmm(W2H):
-    if W2H.fwd_from:
+    if kaal.fwd_from:
         return
     reactcat = nekos.textcat()
-    await edit_or_reply(W2H, reactcat)
+    await edit_or_reply(kaal, reactcat)
 
 
 @bot.on(admin_cmd(pattern="why$"))
 @bot.on(sudo_cmd(pattern="why$", allow_sudo=True))
 async def hmm(W2H):
-    if W2H.fwd_from:
+    if kaal.fwd_from:
         return
-    whyW2H = nekos.why()
-    await edit_or_reply(W2H, whyW2H)
+    whykaal = nekos.why()
+    await edit_or_reply(kaal, whykaal)
 
 
 @bot.on(admin_cmd(pattern="fact$"))
 @bot.on(sudo_cmd(pattern="fact$", allow_sudo=True))
-async def hmm(W2H):
+async def hmm(kaal):
     if W2H.fwd_from:
         return
     factW2H = nekos.fact()
-    await edit_or_reply(W2H, factW2H)
+    await edit_or_reply(kaal, factkaal)
 
 
 CmdHelp("funtxts").add_command(
