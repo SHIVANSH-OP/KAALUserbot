@@ -10,7 +10,7 @@ import time
 
 from telethon import events
 
-from W2HBOT.utils import admin_cmd, sudo_cmd, edit_or_reply
+from kaalBOT.utils import admin_cmd, sudo_cmd, edit_or_reply
 from userbot.cmdhelp import CmdHelp
 
 if not os.path.isdir("./SAVED"):
@@ -65,10 +65,10 @@ async def _(event):
     if event.reply_to_msg_id:
         reply_to_id = event.reply_to_msg_id
     time.time() + PROCESS_RUN_TIME
-    process = await asyncio.create_subprocess_sW2H(
+    process = await asyncio.create_subprocess_skaal(
         cmd, stdout=asyncio.subprocess.PIPE, stderr=asyncio.subprocess.PIPE
     )
-    OUTPUT = f"**Files in [W2HBOT](t.me/W2H_Userbot) DOWNLOADS Folder:**\n"
+    OUTPUT = f"**Files in [kaalBOT](t.me/kaalsupport01) DOWNLOADS Folder:**\n"
     stdout, stderr = await process.communicate()
     if len(stdout) > Config.MAX_MESSAGE_SIZE_LIMIT:
         with io.BytesIO(str.encode(stdout)) as out_file:
@@ -135,7 +135,7 @@ async def _(event):
     if event.reply_to_msg_id:
         reply_to_id = event.reply_to_msg_id
     time.time() + PROCESS_RUN_TIME
-    process = await asyncio.create_subprocess_sW2H(
+    process = await asyncio.create_subprocess_skaal(
         cmd, stdout=asyncio.subprocess.PIPE, stderr=asyncio.subprocess.PIPE
     )
     OUTPUT = f"**Files in SAVED directory:**\n"
@@ -269,11 +269,11 @@ async def handler(event):
 
 
 CmdHelp("filemanager").add_command(
-  'ls_local', None, 'Gives the list of downloaded medias in your W2HBOT server.'
+  'ls_local', None, 'Gives the list of downloaded medias in your kaalBOT server.'
 ).add_command(
-  'ls_root', None, 'Gives the list of all files in root directory of W2HBOT repo.'
+  'ls_root', None, 'Gives the list of all files in root directory of kaalBOT repo.'
 ).add_command(
-  'ls_saved', None, 'Gives the list of all files in Saved directory of your W2HBOT server'
+  'ls_saved', None, 'Gives the list of all files in Saved directory of your kaBOT server'
 ).add_command(
   'rnsaved', 'saved file name', 'Renames the file in saved directory'
 ).add_command(
