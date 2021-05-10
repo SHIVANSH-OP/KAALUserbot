@@ -1,5 +1,5 @@
 #!/bin/bash
-#   Copyright (C) 2021 W2HGalaxy-OP
+#   Copyright (C) 2021 kaal-OP
 #
 #   Poject VΛDΣЯ is free software: 
 #   you can redistribute it and/or modify it under the terms of the GNU General Public License 
@@ -23,8 +23,8 @@ echo """
 ╰╮╭╮╭┫┃╰━┫┃╱┃┃╰━╯┃╰━╯┃╱┃┃
 ╱╰╯╰╯╰━━━┻╯╱╰┻━━━┻━━━╯╱╰╯
 
-Legendary W2HBOT
-@W2HSupport
+Legendary kaalBOT
+@kaalsupport01
 """
 
 python3 string_session.py
