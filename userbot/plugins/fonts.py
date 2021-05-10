@@ -1,7 +1,7 @@
-# Added more fonts by @David99q
+# Added more fonts by @Murat_30_kaal
 # Ported from saitama i guess
 
-from W2HBOT.utils import admin_cmd, sudo_cmd, edit_or_reply
+from kaalBOT.utils import admin_cmd, sudo_cmd, edit_or_reply
 from userbot.cmdhelp import CmdHelp
 
 normiefont = [
@@ -291,4 +291,4 @@ CmdHelp("fonts").add_command(
 ).add_command(
   'zal', '<text>', 'Zagolifies your text'
 ).add()
-#W2HBOT_Op
+#kaalBOT_Op
