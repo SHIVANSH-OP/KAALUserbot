@@ -1,6 +1,6 @@
 import requests
 from userbot import CmdHelp
-from W2HBOT.utils import edit_or_reply, admin_cmd, sudo_cmd
+from kaalBOT.utils import edit_or_reply, admin_cmd, sudo_cmd
 import os
 
 
@@ -18,7 +18,7 @@ async def _(event):
         f.write(response.content)
     
     captin = f"Fake Image By W2HBOT."
-    fole = "W2HBOT.jpg"
+    fole = "kaalBOT.jpg"
     await borg.send_file(event.chat_id, fole, caption=captin)
     await event.delete()
-    os.system("rm /root/userbot/W2HBOT.jpg ")
+    os.system("rm /root/userbot/kaalBOT.jpg ")
