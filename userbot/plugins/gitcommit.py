@@ -25,9 +25,9 @@ async def download(event):
         await edit_or_reply(event, "`Please ADD Proper Access Token from github.com`")
         return
     if Var.GIT_REPO_NAME is None:
-        await edit_or_reply(event, "`Please ADD Proper Github Repo Name of W2HBOT`")
+        await edit_or_reply(event, "`Please ADD Proper Github Repo Name of kaalBOT`")
         return
-    W2HBOT = await edit_or_reply(event, "Processing ...")
+    kaalBOT = await edit_or_reply(event, "Processing ...")
     if not os.path.isdir(GIT_TEMP_DIR):
         os.makedirs(GIT_TEMP_DIR)
     start = datetime.now()
@@ -44,10 +44,10 @@ async def download(event):
         end = datetime.now()
         ms = (end - start).seconds
         await event.delete()
-        await W2HBOT.edit(
+        await kaalBOT.edit(
             "Downloaded to `{}` in {} seconds.".format(downloaded_file_name, ms)
         )
-        await W2HBOT.edit("Committing to Github....")
+        await kaalBOT.edit("Committing to Github....")
         await git_commit(downloaded_file_name, W2HBOT)
 
 
@@ -67,7 +67,7 @@ async def git_commit(file_name, W2HBOT):
     for i in content_list:
         create_file = True
         if i == 'ContentFile(path="' + file_name + '")':
-            return await W2HBOT.edit("`File Already Exists`")
+            return await kaalBOT.edit("`File Already Exists`")
             create_file = False
     file_name = "userbot/plugins/" + file_name
     if create_file == True:
@@ -87,7 +87,7 @@ async def git_commit(file_name, W2HBOT):
             print("Cannot Create Plugin")
             await W2HBOT.edit("Cannot Upload Plugin")
     else:
-        return await W2HBOT.edit("`Committed Suicide`")
+        return await kaalBOT.edit("`Committed Suicide`")
         
         
 CmdHelp("github").add_command(
