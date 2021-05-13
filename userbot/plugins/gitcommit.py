@@ -85,7 +85,7 @@ async def git_commit(file_name, kaalBOT):
             )
         except:
             print("Cannot Create Plugin")
-            await W2HBOT.edit("Cannot Upload Plugin")
+            await kaalBOT.edit("Cannot Upload Plugin")
     else:
         return await kaalBOT.edit("`Committed Suicide`")
         
