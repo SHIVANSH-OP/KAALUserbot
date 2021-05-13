@@ -39,7 +39,7 @@ async def download(event):
             reply_message.media, GIT_TEMP_DIR
         )
     except Exception as e:
-        await W2HBOT.edit(str(e))
+        await kaalBOT.edit(str(e))
     else:
         end = datetime.now()
         ms = (end - start).seconds
@@ -48,10 +48,10 @@ async def download(event):
             "Downloaded to `{}` in {} seconds.".format(downloaded_file_name, ms)
         )
         await kaalBOT.edit("Committing to Github....")
-        await git_commit(downloaded_file_name, W2HBOT)
+        await git_commit(downloaded_file_name, kaalBOT)
 
 
-async def git_commit(file_name, W2HBOT):
+async def git_commit(file_name, kaalBOT):
     content_list = []
     access_token = Var.GITHUB_ACCESS_TOKEN
     g = Github(access_token)
@@ -80,7 +80,7 @@ async def git_commit(file_name, W2HBOT):
             print("Committed File")
             ccess = Var.GIT_REPO_NAME
             ccess = ccess.strip()
-            await W2HBOT.edit(
+            await kaalBOT.edit(
                 f"`Commited On Your Github Repo`\n\n[Your STDPLUGINS](https://github.com/{ccess}/tree/master/userbot/plugins/)"
             )
         except:
