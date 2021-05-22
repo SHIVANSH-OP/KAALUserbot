@@ -1,4 +1,4 @@
-<h1>⚡KAALUSERBOT⚡</h1>
+<h1 align="center">⚡KAALUSERBOT⚡</h1>
 
 
 [![kaal logo](https://telegra.ph/file/f9b0c1b8534fad26d3c8f.jpg)](https://t.me/kaalsupport01)
