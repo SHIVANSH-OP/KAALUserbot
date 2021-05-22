@@ -13,7 +13,6 @@
 
     
   
-- Choose A Hosting Site. And fill the mandatory vars.
 
 
 <h4> DEPLOY TO HEROKU </h4>
