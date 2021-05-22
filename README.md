@@ -11,7 +11,7 @@
 <h1 align="center">FORK AT YOUR OWN RISK</h1>
 
 
-<h1 align="center">⚙️ D E P L O Y I N G ⚙️</h1>
+<h1 align="center">⚙️ DEPLOYING ⚙️</h1>
 
 <details>
   <summary> <h2>Generate String Session</h2> </summary>
