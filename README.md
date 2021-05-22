@@ -8,27 +8,10 @@
 <h2 align="center">The owner would not be responsible for any kind of bans due to the bot.</h2>
 
 
-<h1 align="center">FORK AT YOUR OWN RISK</h1>
+
 
 
 <h1 align="center">⚙️ DEPLOYING ⚙️</h1>
-
-<details>
-  <summary> <h2>Generate String Session</h2> </summary>
-
-- Termux
-    - Install git package
-           `pkg install git`
-    - Clone this repository.
-           `git clone https://github.com/kaal048/kaalBOT.git`
-    - Then Do
-           `cd kaalBOT`
-    - Run String Generator By
-           `bash string.sh`
-    - Then Fill The Required Details.
-    - API ID, API HASH, PHONE NUMBER (WITH COUNTRY CODE)
- 
-- Repl Run
 
 
 [![GenerateString](https://img.shields.io/badge/repl.it-generateString-yellowgreen)](https://replit.com/@kaal0408/kaalBOT#main.py) 
@@ -40,8 +23,7 @@
 </details>
 
 <details>
-  <summary> <h3>HOSTING</h3> </summary>
-
+  
 - Choose A Hosting Site. And fill the mandatory vars.
 
 ## Deploys
