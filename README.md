@@ -120,6 +120,8 @@ along with this program. If not, see <https://www.gnu.org/licenses/>.
 
 • [kaal-OP](https://github.com/kaal0408):DEV
 
+• [SHRVAN](https://github.com/shrvan42):DEV
+
 • [Itzgauravv](https://github.com/itzgauravv):DEV
 
 • [AuraXBot](https://github.com/AuraXNetwork/AuraXBot)
