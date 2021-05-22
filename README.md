@@ -1,4 +1,4 @@
-<h1 align="center">⚡ ˜”*°• k a a l U S E R B O T •°*”˜ ⚡</h1>
+<h1 align="center">⚡• k a a l U S E R B O T •⚡</h1>
 
 
 [![kaal logo](https://telegra.ph/file/f9b0c1b8534fad26d3c8f.jpg)](https://t.me/kaalsupport01)
