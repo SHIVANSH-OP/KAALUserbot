@@ -11,23 +11,10 @@
 
 [![GenerateString](https://img.shields.io/badge/repl.it-generateString-yellowgreen)](https://replit.com/@kaal0408/kaalBOT#main.py) 
 
-    - Click On Generate string
-    - Then Click On Green Play Button.
-    - Wait for a while then fill the details.
-    - String will be saved in your Saved Message.
-</details>
-
-<details>
+    
   
 - Choose A Hosting Site. And fill the mandatory vars.
 
-## Deploys
-
-- You Can Deploy it on 
-    - [Zeet](https://zeet.co/new)
-    - [Uffizzi](https://uffizzi.com)
-    - Any Other VPS.
-    - No support for Termux Yet.
 
 <h4> DEPLOY TO HEROKU </h4>
 
@@ -66,9 +53,9 @@ notifications in Update Channel.
 
 <a href="https://t.me/kaalsupport01"><img src="https://img.shields.io/badge/Join-Support%20Group-red.svg?style=for-the-badge&logo=Telegram"></a>
 
-[![Contact Me](https://img.shields.io/badge/Telegram-Contact%20Me-informational)](https://t.me/David99q)
 
-</details>
+
+
 
 <details>
   <summary> <h4>• LICENSE •</h4> </summary>
