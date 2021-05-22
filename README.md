@@ -16,7 +16,7 @@
 </a>
  
 
-
+```
 - Some of the environment variables are mandatory.
 - These are listed below.
     - `APP_ID`:   You can get this value from [here](https://my.telegram.org)
@@ -29,7 +29,7 @@
     - `BOT_TOKEN`:   Make a Bot from [Botfather](https://t.me/botfather) and paste the bot token here.
     - `BOT_USERNAME`:   Paste the Username of bot that you made from [BotFather](https://t.me/botfather).
 - The userbot will not work without setting the mandatory vars.
-
+```
 
 
 <details>
