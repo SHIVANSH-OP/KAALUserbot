@@ -23,7 +23,8 @@ your kaalBOT in our official
 support Group and get updates
 notifications in Update Channel.
 ```
-<h3>✨OFFICIAL SUPPORT✨</h3>
+
+<h3 align="center"> ✨OFFICIAL SUPPORT✨</h3>
 <a href="https://t.me/kaalsupport"><img src="https://img.shields.io/badge/Join-Support%20Channel-red.svg?style=for-the-badge&logo=Telegram"></a>
 
 <a href="https://t.me/kaalsupport01"><img src="https://img.shields.io/badge/Join-Support%20Group-red.svg?style=for-the-badge&logo=Telegram"></a>
