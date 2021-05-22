@@ -26,7 +26,7 @@ notifications in Update Channel.
 
 <h3 align="center"> ✨OFFICIAL SUPPORT✨</h3>
 
-<a href="https://t.me/kaalsupport"><img src="https://img.shields.io/badge/Join-Support%20Channel-red.svg?style=for-the-badge&logo=Telegram"></a>
+<a align="center" href="https://t.me/kaalsupport"><img src="https://img.shields.io/badge/Join-Support%20Channel-red.svg?style=for-the-badge&logo=Telegram"></a>
 
 <a href="https://t.me/kaalsupport01"><img src="https://img.shields.io/badge/Join-Support%20Group-red.svg?style=for-the-badge&logo=Telegram"></a>
 
