@@ -1,8 +1,8 @@
 
 {
-  "name": "W2HBot",
-  "description": "The best userbot made by @david99q. Made with Love... ❤ For Support Join @W2H_Userbot ",
-  "logo": "https://telegra.ph/file/cee753391111580ae8a0c.jpg",
+  "name": "KAALUserbot",
+  "description": "The best telegram userbot For Support Join @kaalsupport ",
+  "logo": "https://telegra.ph/file/9b32da55df369e9c4ae00.jpg",
     "keywords": [
     "telegram",
     "userbot",
@@ -10,8 +10,7 @@
     "modular",
     "productivity"
   ],
-  "repository": "https://github.com/W2HGalaxy-OP/W2HBot/",
-  "website": "https://github.com/W2HGalaxy-OP/W2HBot/",
+  "repository": "https://github.com/kaal0408/kaaluserbot",
   "success_url": "https://t.me/W2HUserbot",
   "env": {
     "ENV": {
@@ -24,28 +23,28 @@
       "required": false
     },
     "ALIVE_NAME": {
-      "description": "Fill your Full name. By default it is W2H User",
-      "value": "W2H User",
+      "description": "Fill your Full name. =",
+      "value": "",
       "required": false
     },
     "ALIVE_MSG": {
-      "description": "Set Custom Alive Message When entering .W2H Command.",
-      "value": "Legend's W2HBot Is Alive",
+      "description": "Set Custom Alive Message When entering .alive Command.",
+      "value": "kaal user bot Is Alive",
       "required": false
     },
     "ALIVE_PIC": {
       "description": "Put here any telegraph media link for alive pic in .W2H command.",
-      "value": "https://telegra.ph/file/cee753391111580ae8a0c.jpg",
+      "value": "https://telegra.ph/file/9b32da55df369e9c4ae00.jpg",
       "required": false
     },
     "BIO_MSG": {
       "description": "Put Your Telegram Bio Here Required For Auto Bio.",
-      "value": "I am a legend. Bcoz i am W2H User",
+      "value": "I am a legend. Bcoz i am kaal userbot",
       "required": false
     },
     "PMPERMIT_PIC": {
       "description": "put here any telegraph media link for custom pmpermit pic.",
-      "value": "https://telegra.ph/file/cee753391111580ae8a0c.jpg",
+      "value": "https://telegra.ph/file/9b32da55df369e9c4ae00.jpg",
       "required": true
     },
     "CUSTOM_PMPERMIT": {
@@ -108,7 +107,7 @@
        "value": ""
     }, 
     "STRING_SESSION": {
-      "description": "Get this value by running https://repl.it/@GalaxyOp/W2HBOT#main.py ",
+      "description": "Get this value by running https://repl.it/@kaal0408/kaalbot#main.py ",
       "value": ""
     },
     "HEROKU_API_KEY": {
