@@ -5,8 +5,8 @@
 from geopy.geocoders import Nominatim
 from telethon.tl import types
 
-from W2HBOT.utils import admin_cmd, sudo_cmd, edit_or_reply
-from W2HBOT import CmdHelp
+from kaalBOT.utils import admin_cmd, sudo_cmd, edit_or_reply
+from kaalBOT import CmdHelp
 
 @bot.on(admin_cmd(pattern="gps ?(.*)"))
 @bot.on(sudo_cmd(pattern="gps ?(.*)", allow_sudo=True))
