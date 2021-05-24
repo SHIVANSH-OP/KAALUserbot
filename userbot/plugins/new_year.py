@@ -1,7 +1,7 @@
 # Made By @David99q. Keep Credit if you are gonna copy paste it. LOL NOOBS....
 # Happy New Year plugin by David99q for Hellbot
 # Kangers keep credits...
-# Now in W2HBOT
+# Now in kaalBOT
 
 import random
 # credits to aura, john snow
