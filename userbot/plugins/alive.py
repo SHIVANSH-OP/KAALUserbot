@@ -30,11 +30,11 @@ pm_caption += f"**┣★ Master : {mention}**\n"
 pm_caption += f"**┣★ Telethon : `{version.__version__}`**\n"
 pm_caption += f"**┣★ kaalBOT : {kaalversion}**\n"
 pm_caption += f"**┣★ Sudo       : `{sudou}`**\n"
-pm_caption += f"**┣★ Channel   : [Join Here](https://t.me/KAALUserbot)**\n"
-pm_caption += f"**┣★ Creater    : [kaal Here](https://t.me/Murat_30_kaal)**\n"
+pm_caption += f"**┣★ Channel   : [Join Here](https://t.me/kaalsupport)**\n"
+pm_caption += f"**┣★ Creater    : [kaal Here](https://t.me/Murat_30_God)**\n"
 pm_caption += f"**┗━━━━━━━━━━━━━┛**\n"
 
-pm_caption += "    [✨REPO✨](https://github.com/kaal0408/KaalBOT) 🔹 [📜License📜](https://github.com/kaal0408/kaalBOT/blob/master/LICENSE)"
+pm_caption += "    [✨REPO✨](https://github.com/kaal0408/KaalBOT) 🔹 [📜License📜](https://github.com/kaal0408/KAALUserbot/blob/master/LICENSE)"
 
 
 @bot.on(admin_cmd(outgoing=True, pattern="alive$"))
@@ -52,7 +52,7 @@ async def amireallyalive(alive):
 CmdHelp("alive").add_command(
   'alive', None, 'Check weather the bot is alive or not'
 ).add_command(
-  'W2H', None, 'Check weather the bot is alive or not. In your custom Alive Pic and Alive Msg'
+  'kaal', None, 'Check weather the bot is alive or not. In your custom Alive Pic and Alive Msg'
 ).add_info(
   'Zinda Hai Kya Bro?'
 ).add()
