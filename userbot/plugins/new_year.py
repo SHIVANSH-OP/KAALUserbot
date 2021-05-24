@@ -15,7 +15,7 @@ from kaalBOT.utils import admin_cmd, edit_or_reply, sudo_cmd
 # credits to aura, john snow
 from userbot.cmdhelp import CmdHelp
 # credits to aura, john snow
-DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "W2H User"
+DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "kaal User"
 # credits to aura, john snow
 aura = bot.uid
 # credits to aura, john snow
