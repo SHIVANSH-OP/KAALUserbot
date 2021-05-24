@@ -17,7 +17,7 @@ from telethon.tl.functions.users import GetFullUserRequest
 from telethon.tl.types import MessageEntityMentionName
 
 from userbot.cmdhelp import CmdHelp
-from W2HBOT.utils import admin_cmd, sudo_cmd, edit_or_reply
+from kaalBOT.utils import admin_cmd, sudo_cmd, edit_or_reply
 
 # ================= CONSTANT =================
 
@@ -623,7 +623,7 @@ async def vapor(vpr):
 @bot.on(sudo_cmd(pattern=f"repo", allow_sudo=True))
 async def source(e):
     if not e.text[0].isalpha() and e.text[0] not in ("/", "#", "@", "!"):
-        await edit_or_reply(e, "Click [here](https://github.com/W2HGalaxy-OP/W2HBOT) to open this 🔥**Lit AF!!**🔥 __W2HBOT__ Repo.. Join channel :- @W2H_Userbot")
+        await edit_or_reply(e, "Click [here](https://github.com/kaal0408/KAALUserbOT) to open this 🔥**Lit AF!!**🔥 __kaalBOT__ Repo.. Join channel :- @kaalsupport")
 
 
 @bot.on(admin_cmd(pattern="str(?: |$)(.*)", outgoing=True))
