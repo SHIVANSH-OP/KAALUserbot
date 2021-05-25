@@ -2,14 +2,14 @@ import asyncio
 import random
 from asyncio import sleep
 
-from kaalBOT import CmdHelp, bot as W2HBOT, ALIVE_NAME
+from kaalBOT import CmdHelp, bot as kaalBOT, ALIVE_NAME
 from kaalBOT.utils import admin_cmd, sudo_cmd, edit_or_reply as eor
 
 DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "Your Lover"
 
 aura = kaalBOT.uid
 
-W2H = f"[{DEFAULTUSER}](tg://user?id={aura})"
+kaal = f"[{DEFAULTUSER}](tg://user?id={aura})"
 
 @kaalBOT.on(admin_cmd(pattern="hvd$"))
 @kaalBOT.on(sudo_cmd(pattern="hvd$", allow_sudo=True))
@@ -69,11 +69,11 @@ async def gif(event):
     if x == 11:
         await event.edit(f"It still seems \nlike magic every time \nI remember how love softly \ntouched our hearts, \nbringing them together. \n\n[✍️](https://telegra.ph/file/88827f774d6b3b80d1183.jpg) {kaal}", link_preview=True)
     if x == 12:
-        await event.edit(f"I’ve fallen in love many times… always with you\n\n [✍️](https://telegra.ph/file/f19f0f60374f271d05aa1.jpg) {W2H}", link_preview=True)
+        await event.edit(f"I’ve fallen in love many times… always with you\n\n [✍️](https://telegra.ph/file/f19f0f60374f271d05aa1.jpg) {kaal}", link_preview=True)
     if x == 13:
         await event.edit(f"I have one wish for Valentine’s Day. I want you wrapped up in a big bow. \n\n [✍️](https://telegra.ph/file/d8f73ed0a08fbfbbd0a6c.jpg) {kaal}", link_preview=True)
     if x == 14:
-        await event.edit(f"I asked God for a flower, he gave me a bouquet. \nI asked God for a minute, he gave me a day. \nI asked God for true love, he gave me that too. \nI asked for an angel and he gave me you.\n\n [✍️](https://telegra.ph/file/d0a11115399c161139abe.jpg) {W2H}", link_preview=True)
+        await event.edit(f"I asked God for a flower, he gave me a bouquet. \nI asked God for a minute, he gave me a day. \nI asked God for true love, he gave me that too. \nI asked for an angel and he gave me you.\n\n [✍️](https://telegra.ph/file/d0a11115399c161139abe.jpg) {kaal}", link_preview=True)
     if x == 15:
         await event.edit(f"I don’t just love you. I love that I get to have you as my Valentine. \n\n [✍️](https://telegra.ph/file/f11bc438df9608d182e0d.jpg) {kaal}", link_preview=True)
     if x == 16:
