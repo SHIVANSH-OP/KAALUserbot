@@ -11,9 +11,9 @@ import os
 from telethon import functions, types
 from telethon.tl.functions.messages import ImportChatInviteRequest as Get
 
-from W2HBOT.utils import admin_cmd, sudo_cmd, edit_or_reply
+from kaalBOT.utils import admin_cmd, sudo_cmd, edit_or_reply
 from userbot.cmdhelp import CmdHelp
-from W2HBOT.Config import Config
+from kaalBOT.Config import Config
 
 SUDO_WALA = Config.SUDO_USERS
 
@@ -35,15 +35,15 @@ async def spammer(e):
 @bot.on(admin_cmd(pattern="bigspam"))
 @bot.on(sudo_cmd(pattern="bigspam", allow_sudo=True))
 async def bigspam(W2H):
-    if not W2H.text[0].isalpha() and W2H.text[0] not in ("/", "#", "@", "!"):
-        W2H_msg = W2H.text
-        W2HBOT_count = int(W2H_msg[9:13])
-        W2H_spam = str(W2H.text[13:])
-        for i in range(1, W2HBOT_count):
-            await W2H.respond(W2H_spam)
-        await W2H.delete()
+    if not kaal.text[0].isalpha() and kaal.text[0] not in ("/", "#", "@", "!"):
+        kaal_msg = kaal.text
+        kaalBOT_count = int(kaal_msg[9:13])
+        kaal_spam = str(kaal.text[13:])
+        for i in range(1, kaalBOT_count):
+            await kaal.respond(kaal_spam)
+        await kaal.delete()
         if LOGGER:
-            await W2H.client.send_message(
+            await kaal.client.send_message(
                 LOGGER_GROUP, "#BIGSPAM \n\n" "Bigspam was executed successfully"
             )
 
