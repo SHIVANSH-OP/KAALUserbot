@@ -12,7 +12,7 @@ from telethon.tl.types import MessageEntityMentionName
 from telethon.utils import get_input_location
 
 from .. import LOGS, TEMP_DOWNLOAD_DIRECTORY
-from W2HBOT.utils import admin_cmd, edit_or_reply, sudo_cmd
+from kaalBOT.utils import admin_cmd, edit_or_reply, sudo_cmd
 from userbot.cmdhelp import CmdHelp
 
 # Copyright (C) 2019 The Raphielscape Company LLC.
@@ -31,7 +31,7 @@ from userbot.cmdhelp import CmdHelp
 async def who(event):
     if event.fwd_from:
         return
-    W2H = await edit_or_reply(
+    kaal = await edit_or_reply(
         event, "`Sit tight while I steal some data from This guuyyy...`"
     )
     if not os.path.isdir(TEMP_DOWNLOAD_DIRECTORY):
@@ -57,9 +57,9 @@ async def who(event):
         )
         if not photo.startswith("http"):
             os.remove(photo)
-        await W2H.delete()
+        await kaal.delete()
     except TypeError:
-        await W2H.edit(caption, parse_mode="html")
+        await kaal.edit(caption, parse_mode="html")
 
 
 async def get_user(event):
