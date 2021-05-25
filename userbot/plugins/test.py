@@ -1,9 +1,9 @@
-# Credit To @David99q . Keep credit if you are going to edit it. Join @W2H_Userbot
+# Credit To @David99q . Keep credit if you are going to edit it. Join @kaalsupport01
 
 
 import asyncio
 
-from W2HBOT.utils import admin_cmd, sudo_cmd, edit_or_reply
+from kaalBOT.utils import admin_cmd, sudo_cmd, edit_or_reply
 from userbot.cmdhelp import CmdHelp
 
 
@@ -30,10 +30,10 @@ async def _(event):
         await asyncio.sleep(2)
         await edit_or_reply(event, "__Output Generated Successfully__")
         await asyncio.sleep(2)
-        await edit_or_reply(event, "**SAVING OUTPUT TO W2HBOT LOCAL DATABASE**")
+        await edit_or_reply(event, "**SAVING OUTPUT TO kaalBOT LOCAL DATABASE**")
         await asyncio.sleep(3.5)
         await edit_or_reply(event, 
-            "Your[W2HBOT](https:/t.me/W2H_Userbot) is working Fine...\n       Join @W2HSupport For Any Help......"
+            "Your[kaalBOT](https:/t.me/kaalsupport01) is working Fine...\n       Join @kaalsupport For Any Help......"
         )
 
 CmdHelp("test").add_command(
