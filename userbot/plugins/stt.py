@@ -3,7 +3,7 @@ from datetime import datetime
 
 import requests
 
-from W2HBOT.utils import admin_cmd, sudo_cmd, edit_or_reply
+from kaalBOT.utils import admin_cmd, sudo_cmd, edit_or_reply
 from userbot.cmdhelp import CmdHelp
 
 
@@ -27,11 +27,11 @@ async def _(event):
             Config.IBM_WATSON_CRED_URL is None
             or Config.IBM_WATSON_CRED_PASSWORD is None
         ):
-            await W2Hevent.edit(
+            await kaalevent.edit(
                 "You need to set the required ENV variables for this module. \nModule stopping"
             )
         else:
-            await W2Hevent.edit("Starting analysis, using IBM WatSon Speech To Text")
+            await kaalevent.edit("Starting analysis, using IBM WatSon Speech To Text")
             headers = {
                 "Content-Type": previous_message.media.document.mime_type,
             }
@@ -64,13 +64,13 @@ async def _(event):
                     string_to_show = "**Language : **`{}`\n**Time Taken : **`{} seconds`\n**No Results Found**".format(
                         lan, ms
                     )
-                await W2Hevent.edit(string_to_show)
+                await kaalevent.edit(string_to_show)
             else:
-                await W2Hevent.edit(r["error"])
+                await kaalevent.edit(r["error"])
             # now, remove the temporary file
             os.remove(required_file_name)
     else:
-        await W2Hevent.edit("Reply to a voice message, to get the relevant transcript.")
+        await kaalevent.edit("Reply to a voice message, to get the relevant transcript.")
 
 CmdHelp("stt").add_command(
   "stt", "<reply to voice>", "Gets the relevant transcript of replied voice message."
