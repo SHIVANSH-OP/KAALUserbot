@@ -10,15 +10,15 @@ import re
 from telethon.errors.rpcerrorlist import YouBlockedUserError
 
 from userbot import bot
-from W2HBOT.utils import admin_cmd, sudo_cmd, edit_or_reply, progress
+from kaalBOT.utils import admin_cmd, sudo_cmd, edit_or_reply, progress
 from userbot.cmdhelp import CmdHelp
 from userbot.helpers.functions import deEmojify
 
 @bot.on(admin_cmd(pattern="lyrics(?: |$)(.*)", outgoing=True))
 @bot.on(sudo_cmd(pattern="lyrics(?: |$)(.*)", allow_sudo=True))
 async def nope(aura):
-    W2H = aura.pattern_match.group(1)
-    if not W2H:
+    kaal = aura.pattern_match.group(1)
+    if not kaal:
         if aura.is_reply:
             (await aura.get_reply_message()).message
         else:
@@ -27,7 +27,7 @@ async def nope(aura):
             )
             return
 
-    troll = await bot.inline_query("iLyricsBot", f"{(deEmojify(W2H))}")
+    troll = await bot.inline_query("iLyricsBot", f"{(deEmojify(kaal))}")
 
     await troll[0].click(
         aura.chat_id,
