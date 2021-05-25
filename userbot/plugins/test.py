@@ -12,17 +12,17 @@ from userbot.cmdhelp import CmdHelp
 async def _(event):
     if not event.text[0].isalpha() and event.text[0] not in ("/", "#", "@", "!"):
 
-        await edit_or_reply(event, "`Testing W2HBOT`")
+        await edit_or_reply(event, "`Testing kaalBOT`")
         await asyncio.sleep(1)
-        await edit_or_reply(event, "`Testing W2HBOT.`")
+        await edit_or_reply(event, "`Testing kaalBOT.`")
         await asyncio.sleep(1)
-        await edit_or_reply(event, "`Testing W2HBOT..`")
+        await edit_or_reply(event, "`Testing kaalBOT..`")
         await asyncio.sleep(1)
-        await edit_or_reply(event, "`Testing W2HBOT...`")
+        await edit_or_reply(event, "`Testing kaalBOT...`")
         await asyncio.sleep(1)
-        await edit_or_reply(event, "`Testing W2HBOT....`")
+        await edit_or_reply(event, "`Testing kaalBOT....`")
         await asyncio.sleep(1)
-        await edit_or_reply(event, "`Testing W2HBOT.....`")
+        await edit_or_reply(event, "`Testing kaalBOT.....`")
         await asyncio.sleep(2)
         await edit_or_reply(event, "__Testing Successful__")
         await asyncio.sleep(2)
