@@ -1,6 +1,6 @@
 # Made by @David99q for @W2H_Userbot
 
-from W2HBOT.utils import *
+from kaalBOT.utils import *
 from userbot.cmdhelp import CmdHelp
 
 
