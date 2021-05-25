@@ -56,7 +56,7 @@ async def _(event):
     if not reply_message.text:
         await edit_or_reply(event, "```Reply to text message```")
         return
-    W2H = event.pattern_match.group(1)
+    kaal = event.pattern_match.group(1)
     chat = "@QuotLyBot"
     reply_message.sender
     if reply_message.sender.bot:
