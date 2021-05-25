@@ -5,10 +5,10 @@ from PIL import Image
 from telegraph import Telegraph, exceptions, upload_file
 
 from userbot import ALIVE_NAME
-from W2HBOT.utils import admin_cmd, sudo_cmd, edit_or_reply
+from kaalBOT.utils import admin_cmd, sudo_cmd, edit_or_reply
 from userbot.cmdhelp import CmdHelp
 
-W2H_NAME = str(ALIVE_NAME) if ALIVE_NAME else "W2H User"
+kaal_NAME = str(ALIVE_NAME) if ALIVE_NAME else "kaal User"
 
 aura = bot.uid
 
@@ -23,7 +23,7 @@ async def _(event):
     if event.fwd_from:
         return
     if Config.PLUGIN_CHANNEL is None:
-        await edit_or_reply(event, "Please set the required environment variable `PLUGIN_CHANNEL` for this plugin to work\n\nGo to [W2HBOT Chat Group](t.me/W2HSupport) for assistance"
+        await edit_or_reply(event, "Please set the required environment variable `PLUGIN_CHANNEL` for this plugin to work\n\nGo to [W2HBOT Chat Group](t.me/kaalsupport01) for assistance"
         )
         return
     if not os.path.isdir(Config.TMP_DOWNLOAD_DIRECTORY):
@@ -91,7 +91,7 @@ async def _(event):
             ms = (end - start).seconds
             David99q = f"https://telegra.ph/{response['path']}"
             await edit_or_reply(event, 
-                  f"✓ **Pasted to** [telegraph]({David99q}) \n✓ **Time Taken :-** `{ms}` secs\n✓** By :- **[{W2H_NAME}](tg://user?id={aura})", link_preview=True)
+                  f"✓ **Pasted to** [telegraph]({David99q}) \n✓ **Time Taken :-** `{ms}` secs\n✓** By :- **[{kaal_NAME}](tg://user?id={aura})", link_preview=True)
     else:
         await edit_or_reply(event, 
             "Reply to a message to get a permanent telegra.ph link."
