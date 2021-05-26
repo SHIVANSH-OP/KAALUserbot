@@ -10,7 +10,7 @@
     "modular",
     "productivity"
   ],
-  "repository": "https://github.com/kaal0408/kaaluserbot",
+  "repository": "https://github.com/kaal0408/kAALUserbot",
   "success_url": "https://t.me/W2HUserbot",
   "env": {
     "ENV": {
@@ -33,7 +33,7 @@
       "required": false
     },
     "ALIVE_PIC": {
-      "description": "Put here any telegraph media link for alive pic in .W2H command.",
+      "description": "Put here any telegraph media link for alive pic in .kaal command.",
       "value": "https://telegra.ph/file/9b32da55df369e9c4ae00.jpg",
       "required": false
     },
