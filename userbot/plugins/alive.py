@@ -22,7 +22,7 @@ aura = bot.uid
 mention = f"[{DEFAULTUSER}](tg://user?id={aura})"
 
 
-PM_IMG = "https://telegra.ph/file/6b0c9443fdf08ca9eb07b.mp4"
+PM_IMG = "https://telegra.ph/file/e1f9260a90b177a8e7c22.jpg"
 pm_caption ="**kaalBOT Is Online**\n\n"
 
 pm_caption += f"**┏━━━━━━━━━━━━━┓**\n"
@@ -34,7 +34,7 @@ pm_caption += f"**┣★ Channel   : [Join Here](https://t.me/kaalsupport)**\n"
 pm_caption += f"**┣★ Creater    : [kaal Here](https://t.me/Murat_30_God)**\n"
 pm_caption += f"**┗━━━━━━━━━━━━━┛**\n"
 
-pm_caption += "    [✨REPO✨](https://github.com/kaal0408/KaalBOT) 🔹 [📜License📜](https://github.com/kaal0408/KAALUserbot/blob/master/LICENSE)"
+pm_caption += "    [✨REPO✨](https://github.com/kaal0408/KAALUserbot) 🔹 [📜License📜](https://github.com/kaal0408/KAALUserbot/blob/master/LICENSE)"
 
 
 @bot.on(admin_cmd(outgoing=True, pattern="alive$"))
