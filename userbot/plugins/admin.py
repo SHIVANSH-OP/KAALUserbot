@@ -191,7 +191,7 @@ async def demote(dmod):
     except BadRequestError:
         await kaalevent.edit(NO_PERM)
         return
-    await W2Hevent.edit("Demoted Successfully!Bhut ud rhe the admin bn kr aa gyy zameen pe 😏")
+    await kaalevent.edit("Demoted Successfully!Bhut ud rhe the admin bn kr aa gyy zameen pe 😏")
     if BOTLOG:
         await dmod.client.send_message(
             BOTLOG_CHATID,
@@ -220,7 +220,7 @@ async def ban(bon):
     try:
         await bon.client(EditBannedRequest(bon.chat_id, user.id, BANNED_RIGHTS))
     except BadRequestError:
-        await W2Hevent.edit(NO_PERM)
+        await kaalevent.edit(NO_PERM)
         return
     try:
         reply = await bon.get_reply_message()
