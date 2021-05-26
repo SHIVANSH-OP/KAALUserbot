@@ -16,7 +16,7 @@
 </a>
 
 
- <h1 align="center">⚙️String Session⚙️</h1>
+ <h1 align="center">💫String Session💫</h1>
 
  [![Run on Repl.it](https://repl.it/badge/github/kaal0408/KAAlUserbot&theme=midnight-purple)](https://replit.com/@Paramatin/KaalUserbot-SessionGenrator#main.py)
 
