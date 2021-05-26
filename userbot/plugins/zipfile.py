@@ -3,7 +3,7 @@ import os
 import time
 import zipfile
 
-from W2HBOT.utils import admin_cmd, sudo_cmd, edit_or_reply
+from kaalBOT.utils import admin_cmd, sudo_cmd, edit_or_reply
 
 
 @bot.on(admin_cmd(pattern="compress ?(.*)", outgoing=True))
