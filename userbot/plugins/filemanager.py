@@ -273,7 +273,7 @@ CmdHelp("filemanager").add_command(
 ).add_command(
   'ls_root', None, 'Gives the list of all files in root directory of kaalBOT repo.'
 ).add_command(
-  'ls_saved', None, 'Gives the list of all files in Saved directory of your kaBOT server'
+  'ls_saved', None, 'Gives the list of all files in Saved directory of your kaalBOT server'
 ).add_command(
   'rnsaved', 'saved file name', 'Renames the file in saved directory'
 ).add_command(
