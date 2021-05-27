@@ -21,13 +21,13 @@ if not os.path.isdir("./temp"):
 
 @bot.on(admin_cmd(pattern="stoi$"))
 @bot.on(sudo_cmd(pattern="stoi$", allow_sudo=True))
-async def _(W2H):
+async def _(kaal):
     if kaal.fwd_from:
         return
     reply_to_id = W2H.message.id
     if kaal.reply_to_msg_id:
-        reply_to_id = W2H.reply_to_msg_id
-    event = await edit_or_reply(W2H, "Converting.....")
+        reply_to_id = kaal.reply_to_msg_id
+    event = await edit_or_reply(kaal, "Converting.....")
     if not os.path.isdir(Config.TMP_DOWNLOAD_DIRECTORY):
         os.makedirs(Config.TMP_DOWNLOAD_DIRECTORY)
     if event.reply_to_msg_id:
@@ -40,7 +40,7 @@ async def _(W2H):
             reply_message, downloaded_file_name
         )
         if os.path.exists(downloaded_file_name):
-            caat = await W2H.client.send_file(
+            caat = await kaal.client.send_file(
                 event.chat_id,
                 downloaded_file_name,
                 force_document=False,
@@ -59,9 +59,9 @@ async def _(W2H):
 async def _(W2H):
     if kaal.fwd_from:
         return
-    reply_to_id = W2H.message.id
+    reply_to_id = kaal.message.id
     if kaal.reply_to_msg_id:
-        reply_to_id = W2H.reply_to_msg_id
+        reply_to_id = kaal.reply_to_msg_id
     event = await edit_or_reply(kaal, "Converting.....")
     if not os.path.isdir(Config.TMP_DOWNLOAD_DIRECTORY):
         os.makedirs(Config.TMP_DOWNLOAD_DIRECTORY)
