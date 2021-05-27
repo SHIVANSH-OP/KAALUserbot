@@ -27,7 +27,7 @@ bot = "@MissRose_bot"
 kaal_logo = "./kaal/kaalBOT_logo.jpg"
 # Keep all credits pls
 # madewith great effort by @HeisenbergTheDanger
-# modified by @Murat_30_kaal for fbans
+# modified by @Murat_30_God for fbans
 
 
 @kaalBOT.on(admin_cmd(pattern="fban ?(.*)"))
@@ -390,7 +390,7 @@ async def _(event):
             response = conv.wait_event(
                 events.NewMessage(incoming=True, from_users=609517172)
             )
-            await event.client.send_message(chat, f"/newfed {W2H_input}")
+            await event.client.send_message(chat, f"/newfed {kaal_input}")
             response = await response
         except YouBlockedUserError:
             await eor(event, "`Please unblock` @MissRose_Bot `and try again`")
@@ -414,7 +414,7 @@ async def _(event):
     async with event.client.conversation(chat) as conv:
           try:     
               response = conv.wait_event(events.NewMessage(incoming=True,from_users=609517172))
-              await event.client.send_message(chat, f"/renamefed {W2H_input}")
+              await event.client.send_message(chat, f"/renamefed {kaal_input}")
               response = await response 
           except YouBlockedUserError: 
               await event.reply("Please Unblock @MissRose_Bot")
@@ -430,7 +430,7 @@ async def _(event):
     if event.fwd_from:
         return
     kaal = await event.edit("`Collecting fstat....`")
-    thumb = W2H_logo
+    thumb = kaal_logo
     if event.reply_to_msg_id:
         previous_message = await event.get_reply_message()
         lavde = str(previous_message.sender_id)
