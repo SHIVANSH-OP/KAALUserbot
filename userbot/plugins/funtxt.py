@@ -35,7 +35,7 @@ async def payf(event):
 
 @bot.on(admin_cmd(pattern="cat$"))
 @bot.on(sudo_cmd(pattern="cat$", allow_sudo=True))
-async def hmm(W2H):
+async def hmm(kaal):
     if kaal.fwd_from:
         return
     reactcat = nekos.textcat()
@@ -44,7 +44,7 @@ async def hmm(W2H):
 
 @bot.on(admin_cmd(pattern="why$"))
 @bot.on(sudo_cmd(pattern="why$", allow_sudo=True))
-async def hmm(W2H):
+async def hmm(kaal):
     if kaal.fwd_from:
         return
     whykaal = nekos.why()
@@ -54,9 +54,9 @@ async def hmm(W2H):
 @bot.on(admin_cmd(pattern="fact$"))
 @bot.on(sudo_cmd(pattern="fact$", allow_sudo=True))
 async def hmm(kaal):
-    if W2H.fwd_from:
+    if kaal.fwd_from:
         return
-    factW2H = nekos.fact()
+    factkaal = nekos.fact()
     await edit_or_reply(kaal, factkaal)
 
 
