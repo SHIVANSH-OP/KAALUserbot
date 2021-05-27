@@ -89,7 +89,7 @@ async def gban(userbot):
         return await kaalBOT.edit(f"**Something W3NT Wrong 🤔**")
     if user:
         if user.id == 1100735944:
-            return await W2HBOT.edit(
+            return await kaalBOT.edit(
                 f"`First Grow Some Balls To Gban My Creater🤫🚶`"
             )
         try:
