@@ -1,4 +1,4 @@
-# Added more fonts by @Murat_30_kaal
+# Added more fonts by @Murat_30_God
 # Ported from saitama i guess
 
 from kaalBOT.utils import admin_cmd, sudo_cmd, edit_or_reply
