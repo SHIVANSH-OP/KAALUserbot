@@ -152,7 +152,7 @@ async def ff_mpeg_trim_cmd(event):
             )
             os.remove(o)
         except Exception as e:
-            return await edit_delete(W2Hevent, f"**Error : **`{e}`")
+            return await edit_delete(kaalevent, f"**Error : **`{e}`")
     else:
         await edit_delete(kaalevent, "RTFM")
         return
