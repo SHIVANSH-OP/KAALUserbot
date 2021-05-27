@@ -15,9 +15,9 @@ global groupsid
 groupsid = []
 
 
-async def all_groups_id(W2H):
+async def all_groups_id(kaal):
     kaalgroups = []
-    async for dialog in W2H.client.iter_dialogs():
+    async for dialog in kaal.client.iter_dialogs():
         entity = dialog.entity
         if isinstance(entity, Channel) and entity.megagroup:
             kaalgroups.append(entity.id)
