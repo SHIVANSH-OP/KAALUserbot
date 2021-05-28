@@ -1,5 +1,5 @@
 # credits to userge
-# ported to kaalBOT by @David99q
+# ported to kaalBOT by @Murat_30_God
 # will be adding more soon
 
 import asyncio
