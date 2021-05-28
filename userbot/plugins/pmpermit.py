@@ -30,7 +30,7 @@ aura = (
     if CUSTOM_PMPERMIT
     else "**YOU HAVE TRESPASSED TO MY MASTERS INBOX** \n THIS IS ILLEGAL AND REGARDED AS CRIME"
 )
-DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "W2H User"
+DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "kaal User"
 USER_BOT_WARN_ZERO = "**Are Bahinchod spamming kr rha h mere sweet master ke inbox me, Ruk abhi block krta h bhnchooo kaalBOT.**\n__Now GTFO, i'm busy__"
 USER_BOT_NO_WARN = (
     "Hello, Ruk Ja Bhai Ruk Ja This is **kaalBOT Ultra Private Security Guard H hum Give ur identity before msg my master 😎⚠️**.\n"
