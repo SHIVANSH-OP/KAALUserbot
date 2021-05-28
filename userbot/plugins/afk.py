@@ -7,8 +7,8 @@ from datetime import datetime
 from telethon import events
 from telethon.tl import functions, types
 from userbot import CMD_HELP
-from userbot import ALIVE_NAME, W2Hversion
-from W2HBOT.utils import admin_cmd, edit_or_reply
+from userbot import ALIVE_NAME, kaalversion
+from kaalBOT.utils import admin_cmd, edit_or_reply
 from userbot.cmdhelp import CmdHelp
 
 DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "kaal User"
@@ -101,7 +101,7 @@ async def on_afk(event):
   if reason
             else f"**Heyy!**\n__I am currently unavailable.__\n__Since when, you ask? From__ `{total_afk_time}`\nI'll be back when I feel to come🚶"
         )
-        msg = await event.reply(message_to_reply, file=W2Hpic)
+        msg = await event.reply(message_to_reply, file=kaalpic)
         await asyncio.sleep(2)
         if event.chat_id in last_afk_message:  # pylint:disable=E0602
             await last_afk_message[event.chat_id].delete()  # pylint:disable=E0602
