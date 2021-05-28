@@ -18,7 +18,7 @@ async def nope(aura):
             )
             return
 
-    troll = await bot.inline_query("animedb_bot", f"{(deEmojify(W2H))}")
+    troll = await bot.inline_query("animedb_bot", f"{(deEmojify(kaal))}")
 
     await troll[0].click(
         aura.chat_id,
