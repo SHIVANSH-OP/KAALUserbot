@@ -1,4 +1,4 @@
-# Made By @Murat_30_kaal
+# Made By @Murat_30_God
 # Keep Credits else gay....
 
 """Create Private Groups
