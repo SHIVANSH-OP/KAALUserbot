@@ -51,7 +51,7 @@ async def remove_background(event):
     message_id = await reply_id(event)
     if event.reply_to_msg_id and not input_str:
         reply_message = await event.get_reply_message()
-        W2Hevent = await edit_or_reply(event, "`Analysing...`")
+        kaalevent = await edit_or_reply(event, "`Analysing...`")
         file_name = os.path.join(TEMP_DIR, "rmbg.png")
         try:
             await event.client.download_media(reply_message, file_name)
