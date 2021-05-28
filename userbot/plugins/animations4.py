@@ -101,9 +101,9 @@ async def _(event):
         
 @bot.on(admin_cmd(pattern="istar$", outgoing=True))
 @bot.on(sudo_cmd(pattern="istar$", allow_sudo=True))
-async def ammastar(W2Hstar):
+async def ammastar(kaalstar):
   
-    if W2Hstar.fwd_from:
+    if kaalstar.fwd_from:
       
         return
       
@@ -111,7 +111,7 @@ async def ammastar(W2Hstar):
     
     animation_ttl = range(0, 11)
     
-    await edit_or_reply(W2Hstar, "I am A Star")
+    await edit_or_reply(kaalstar, "I am A Star")
     
     animation_chars = [
         "I Party like a rockstar",
