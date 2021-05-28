@@ -78,7 +78,7 @@ async def remove_background(event):
         with open("kaalBOT.png", "wb") as removed_bg_file:
             removed_bg_file.write(response.content)
     else:
-        await edit_or_reply(W2Hevent, f"`{response.content.decode('UTF-8')}`")
+        await edit_or_reply(kaalevent, f"`{response.content.decode('UTF-8')}`")
         return
     if cmd == "srmbg":
         file = convert_tosticker(remove_bg_image, filename="kaalBOT.webp")
