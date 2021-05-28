@@ -6,7 +6,7 @@ from userbot import bot as kaalBOT
 from userbot import ALIVE_NAME
 
 DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "kaal User"
-W2H_logo = "./kaal/kaalBOT_logo.jpg"
+kaal_logo = "./kaal/kaalBOT_logo.jpg"
 
 @kaalBOT.on(admin_cmd(pattern=r"cmds"))
 @kaalBOT.on(sudo_cmd(pattern=r"cmds", allow_sudo=True))
