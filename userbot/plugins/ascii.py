@@ -1,4 +1,4 @@
-# Ascii module by @Murat_30_kaal for @kaal_Userbot
+# Ascii module by @Murat_30_God for @kaalsupport01
 # A over powerful bot
 # I know u will kang...
 # GTFO!! MOTHERFUCKER!!!!!!!!!!!
