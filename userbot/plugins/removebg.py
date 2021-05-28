@@ -59,7 +59,7 @@ async def remove_background(event):
             await edit_or_reply(kaalevent, f"`{str(e)}`")
             return
         else:
-            await W2Hevent.edit("`Removing Background of this media`")
+            await kaalevent.edit("`Removing Background of this media`")
             file_name = convert_toimage(file_name)
             response = ReTrieveFile(file_name)
             os.remove(file_name)
