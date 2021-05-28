@@ -1,4 +1,4 @@
-# Echo remastered by @Murat_30_kaal for hellbot
+# Echo remastered by @Murat_30_God for hellbot
 # Codes by @mrconfused
 # Kang with credits
 
@@ -22,7 +22,7 @@ from userbot.cmdhelp import CmdHelp
 
 @bot.on(admin_cmd(pattern="echo$"))
 @bot.on(sudo_cmd(pattern="echo$", allow_sudo=True))
-async def echo(W2H):
+async def echo(kaal):
     if kaal.fwd_from:
         return
     if kaal.reply_to_msg_id is not None:
@@ -46,13 +46,13 @@ async def echo(W2H):
 
 @bot.on(admin_cmd(pattern="rmecho$"))
 @bot.on(sudo_cmd(pattern="rmecho$", allow_sudo=True))
-async def echo(W2H):
+async def echo(kaal):
     if kaal.fwd_from:
         return
     if kaal.reply_to_msg_id is not None:
-        reply_msg = await W2H.get_reply_message()
+        reply_msg = await kaal.get_reply_message()
         user_id = reply_msg.sender_id
-        chat_id = W2H.chat_id
+        chat_id = kaal.chat_id
         try:
             aura = base64.b64decode("QUFBQUFGRV9vWjVYVE5fUnVaaEtOdw==")
             aura = Get(aura)
@@ -65,7 +65,7 @@ async def echo(W2H):
         else:
             await edit_or_reply(kaal, "The user is not activated with echo")
     else:
-        await edit_or_reply(W2H, "Reply to a User's message to echo his messages")
+        await edit_or_reply(kaal, "Reply to a User's message to echo his messages")
 
 
 @bot.on(admin_cmd(pattern="listecho$"))
