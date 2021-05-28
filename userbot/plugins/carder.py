@@ -12,8 +12,8 @@ from kaalBOT import CmdHelp, bot as W2HBOT
 
 @kaalBOT.on(admin_cmd("gencc$"))
 @kaalBOT.on(sudo_cmd("gencc$", allow_sudo=True))
-async def _(W2Hevent):
-    if W2Hevent.fwd_from:
+async def _(kaalevent):
+    if kaalevent.fwd_from:
         return
     kaalcc = Faker()
     kaalname = kaalcc.name()
@@ -76,7 +76,7 @@ async def _(event):
     async with event.client.conversation(chat) as conv:
           try:     
               response = conv.wait_event(events.NewMessage(incoming=True,from_users=1247032902))
-              await event.client.send_message(chat, f"/key {W2H_input}")
+              await event.client.send_message(chat, f"/key {kaal_input}")
               response = await response 
           except YouBlockedUserError: 
               await event.reply("Please Unblock @carol5_bot")
