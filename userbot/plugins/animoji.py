@@ -144,7 +144,7 @@ async def _(event):
 
 import asyncio
 
-from W2HBOT.utils import admin_cmd
+from kaalBOT.utils import admin_cmd
 
 
 @bot.on(admin_cmd(pattern=f"lovestory", outgoing=True))
