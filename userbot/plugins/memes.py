@@ -811,7 +811,7 @@ async def smrk(smk):
         message = textx
         message = str(message.message)
     if message == "dele":
-        await edit_or_reply(smk, message + "te the W2H" + "ツ")
+        await edit_or_reply(smk, message + "te the kaal" + "ツ")
         await edit_or_reply(smk, "ツ")
     else:
         smirk = " ツ"
@@ -874,4 +874,4 @@ CmdHelp("memes").add_command(
 ).add_command(
   "cowsay", "<text>", "Use and see....."
 ).add()
-#W2HBOT_OP
+#kaalBOT_OP
