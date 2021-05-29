@@ -98,7 +98,7 @@ async def kaalBOT(kaalmemes):
         os.remove(download_location)
         return
     kaal = f"https://telegra.ph{response[0]}"
-    kaal = await awooify(W2H)
+    kaal = await awooify(kaal)
     await kaalevent.delete()
     await kaalmemes.client.send_file(kaalmemes.chat_id, kaal, reply_to=replied)
 
