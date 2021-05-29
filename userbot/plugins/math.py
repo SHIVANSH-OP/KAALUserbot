@@ -8,7 +8,7 @@ import math
 from kaalBOT.utils import admin_cmd, sudo_cmd, edit_or_reply
 
 from userbot import CmdHelp
-from userbot import bot as W2HBOT
+from userbot import bot as kaalBOT
 
 
 @kaalBOT.on(admin_cmd(pattern="sin ?(.*)"))
