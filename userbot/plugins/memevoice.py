@@ -1,5 +1,5 @@
 # Credits to @spechide and his team for @TROLLVOICEBOT
-# made by @David99q from the snippets of waifu AKA stickerizerbot....
+# made by @Murat_30_God from the snippets of waifu AKA stickerizerbot....
 # kang karega kya madarchod?
 # aukaat h bsdk teri...jake baap ka loda chus ke aa....
 
@@ -24,7 +24,7 @@ async def nope(aura):
             )
             return
 
-    troll = await bot.inline_query("TrollVoiceBot", f"{(deEmojify(W2H))}")
+    troll = await bot.inline_query("TrollVoiceBot", f"{(deEmojify(kaal))}")
 
     await troll[0].click(
         aura.chat_id,
