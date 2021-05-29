@@ -67,8 +67,8 @@ async def kaalBOT(kaalmemes):
         await edit_or_reply(kaalmemes, "reply to a supported media file")
         return
     try:
-        W2H = base64.b64decode("QUFBQUFGRV9vWjVYVE5fUnVaaEtOdw==")
-        W2H = Get(W2H)
+        kaal = base64.b64decode("QUFBQUFGRV9vWjVYVE5fUnVaaEtOdw==")
+        kaal = Get(kaal)
         await kaalmemes.client(kaal)
     except BaseException:
         pass
@@ -145,7 +145,7 @@ async def kaalBOT(kaalmemes):
         response = upload_file(download_location)
         os.remove(download_location)
     except exceptions.TelegraphException as exc:
-        await W2Hevent.edit("ERROR: " + str(exc))
+        await kaalevent.edit("ERROR: " + str(exc))
         os.remove(download_location)
         return
     kaal = f"https://telegra.ph{response[0]}"
@@ -247,7 +247,7 @@ async def kaalBOT(kaalmemes):
         response = upload_file(download_location)
         os.remove(download_location)
     except exceptions.TelegraphException as exc:
-        await W2Hevent.edit("ERROR: " + str(exc))
+        await kaalevent.edit("ERROR: " + str(exc))
         os.remove(download_location)
         return
     kaal = f"https://telegra.ph{response[0]}"
