@@ -18,7 +18,7 @@ async def _(kaalevent):
     if reply_message.sender.bot:
        await eor(kaalevent, "Need actual users. Not Bots")
        return
-    await eor(Wkaalevent, "Checking...")
+    await eor(kaalevent, "Checking...")
     async with kaalevent.client.conversation(chat) as conv:
           try:     
               response1 = conv.wait_event(events.NewMessage(incoming=True,from_users=461843263))
