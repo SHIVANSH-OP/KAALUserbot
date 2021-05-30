@@ -68,7 +68,7 @@ async def _(kaalevent):
              await eor(kaalevent, "User never changed his Username...")
           else: 
              await kaalevent.delete()
-             await kaalevent.client.send_message(W2Hevent.chat_id, response3.message)
+             await kaalevent.client.send_message(kaalevent.chat_id, response3.message)
 
 CmdHelp("history").add_command(
   "history", "<reply to a user>", "Fetches the name history of replied user."
