@@ -12,7 +12,7 @@ async def _(kaalevent):
     if not kaalevent.reply_to_msg_id:
        await eor(kaalevent, "`Please Reply To A User To Get This Module Work`")
        return
-    reply_message = await W2Hevent.get_reply_message() 
+    reply_message = await kaalevent.get_reply_message() 
     chat = "Sangmatainfo_bot"
     victim = reply_message.sender.id
     if reply_message.sender.bot:
@@ -35,7 +35,7 @@ async def _(kaalevent):
              await eor(kaalevent, "User never changed his Username...")
           else: 
              await kaalevent.delete()
-             await kaalevent.client.send_message(W2Hevent.chat_id, response2.message)
+             await kaalevent.client.send_message(kaalevent.chat_id, response2.message)
 
 @kaalBOT.on(admin_cmd(pattern="unh ?(.*)"))
 @kaalBOT.on(sudo_cmd(pattern="unh ?(.*)", allow_sudo=True))
