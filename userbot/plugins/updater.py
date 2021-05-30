@@ -136,7 +136,7 @@ def generate_change_log(git_repo, diff_marker):
 async def deploy_start(tgbot, message, refspec, remote):
     await message.edit(RESTARTING_APP)
     await message.edit(
-        "Updated your W2HBOT successfully sir!!!\nNow type `.ping` after 5 mins to check if I'm on Sir 😎"
+        "Updated your kaalBOT successfully sir!!!\nNow type `.ping` after 5 mins to check if I'm on Sir 😎"
     )
     await remote.push(refspec=refspec)
     await tgbot.disconnect()
