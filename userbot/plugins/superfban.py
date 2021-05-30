@@ -346,9 +346,9 @@ async def _(event):
             return
     except:
         if (
-            FBAN == "@W2H_Owner"
-            or FBAN == "@W2H_Queen"
-            or FBAN == "@W2H_CoOwnerr"
+            FBAN == "@kaal_Owner"
+            or FBAN == "@kaal_Queen"
+            or FBAN == "@kaal_CoOwnerr"
         ):
             await event.edit("Something went wrong.")
             return
