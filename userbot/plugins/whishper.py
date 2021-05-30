@@ -1,4 +1,4 @@
-# Made by @David99q for @W2H_Userbot
+# Made by @Murat_30_God for @kaal_Userbot
 
 from kaalBOT.utils import *
 from userbot.cmdhelp import CmdHelp
