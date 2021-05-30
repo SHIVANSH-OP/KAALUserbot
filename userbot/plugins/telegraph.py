@@ -23,7 +23,7 @@ async def _(event):
     if event.fwd_from:
         return
     if Config.PLUGIN_CHANNEL is None:
-        await edit_or_reply(event, "Please set the required environment variable `PLUGIN_CHANNEL` for this plugin to work\n\nGo to [W2HBOT Chat Group](t.me/kaalsupport01) for assistance"
+        await edit_or_reply(event, "Please set the required environment variable `PLUGIN_CHANNEL` for this plugin to work\n\nGo to [kaalBOT Chat Group](t.me/kaalsupport01) for assistance"
         )
         return
     if not os.path.isdir(Config.TMP_DOWNLOAD_DIRECTORY):
@@ -62,7 +62,7 @@ async def _(event):
                 os.remove(downloaded_file_name)
                 await edit_or_reply(event, 
                    "✓ **YOUR FILE :-** https://telegra.ph{} \n✓ **Time Taken :-** `{}` secs \n✓ **By :- [{}](tg://user?id={})**".format(
-                        media_urls[0], (ms + ms_two), W2H_NAME, aura
+                        media_urls[0], (ms + ms_two), kaal_NAME, aura
                     ),
                     link_preview=True,
                 )
@@ -89,9 +89,9 @@ async def _(event):
             response = telegraph.create_page(title_of_page, html_content=page_content)
             end = datetime.now()
             ms = (end - start).seconds
-            David99q = f"https://telegra.ph/{response['path']}"
+            Murat_30_God = f"https://telegra.ph/{response['path']}"
             await edit_or_reply(event, 
-                  f"✓ **Pasted to** [telegraph]({David99q}) \n✓ **Time Taken :-** `{ms}` secs\n✓** By :- **[{kaal_NAME}](tg://user?id={aura})", link_preview=True)
+                  f"✓ **Pasted to** [telegraph]({Murar_30_God}) \n✓ **Time Taken :-** `{ms}` secs\n✓** By :- **[{kaal_NAME}](tg://user?id={aura})", link_preview=True)
     else:
         await edit_or_reply(event, 
             "Reply to a message to get a permanent telegra.ph link."
