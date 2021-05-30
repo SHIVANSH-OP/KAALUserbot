@@ -1,4 +1,4 @@
-# PLUGIN MADE BY @David99q FOR kaalBOT
+# PLUGIN MADE BY @Murat_30_kaal FOR kaalBOT
 # KEEP CREDITS ELSE GAY
 
 import random, re
