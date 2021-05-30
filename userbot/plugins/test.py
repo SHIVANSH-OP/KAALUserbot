@@ -1,4 +1,4 @@
-# Credit To @David99q . Keep credit if you are going to edit it. Join @kaalsupport01
+# Credit To @Murat_30_God . Keep credit if you are going to edit it. Join @kaalsupport01
 
 
 import asyncio
